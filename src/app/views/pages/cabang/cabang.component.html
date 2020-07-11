@@ -1,0 +1,8 @@
+<div class="container">
+  <div fxLayout="row wrap" fxLayout.lt-sm="column" fxLayoutGap="20px" fxLayoutAlign="flex-start">
+    <ng-container *ngFor="let item of schoolGroups">
+      <kt-widget-cabang [schoolGroup]="item" fxFlex="0 1 calc(33.3% - 20px)" fxFlex.lt-md="0 1 calc(50% - 20px)" fxFlex.lt-sm="100%">
+      </kt-widget-cabang>
+    </ng-container>
+  </div>
+</div>
