@@ -16,7 +16,7 @@ import { DataSMA } from './sma'
 
 
 @Injectable()
-export class SmaCitraKasihData extends DataSMA implements SchoolData {
+export class DataSMACitraKasih extends DataSMA implements SchoolData {
 
   getKepalaTataUsaha(): KepalaTataUsaha {
     return {

@@ -1,43 +1,43 @@
 import {
-  Pusat,
+  Cabang,
   KepalaInstansi,
   WakilKepalaInstansi,
   InstansiType,
   JabatanInstansi,
   Manager,
   Staff
-} from '../../_base/crud/models/hangtuah-organization';
-import { SchoolData } from '../school-org-generator';
+} from '../../../_base/crud/models/hangtuah-organization';
 import { Injectable } from '@angular/core';
-import { DataPaudBulan } from '../schools/paud/paud-bulan';
-import { DataSDMarsudi } from '../schools/sd/sd-marsudi';
-import { DataSMPKurnia } from '../schools/smp/smp-kurnia';
-import { DataSMACitraKasih } from '../schools/sma/sma-citrakasih';
-import { DataSMKBerkarya } from '../schools/smk/smk-berkarya';
-import { DataSMKCitraBangsa } from '../schools/smk/smk-citrabangsa';
-import { DataInstansi } from './data-hangtuah';
+import { DataPusat } from '../pusat';
+import { DataSDMarsudi } from '../../schools/sd/sd-marsudi';
+import { DataSMPKurnia } from '../../schools/smp/smp-kurnia';
+import { DataSDTarakinata } from '../../schools/sd/sd-tarakinata';
+import { DataSMPNugraha } from '../../schools/smp/smp-nugraha';
+import { DataInstansi } from '../data-hangtuah';
+import { SchoolData } from '../../school-org-generator';
 
 @Injectable()
-export class DataPusat extends DataInstansi<Pusat> {
+export class DataCabangPadang extends DataInstansi<Cabang> {
+
   constructor(
-    private dataPaudBulan: DataPaudBulan,
+    private dataPusat: DataPusat,
     private dataSdMarsudi: DataSDMarsudi,
+    private dataSdTaraKinata: DataSDTarakinata,
     private dataSmpKurnia: DataSMPKurnia,
-    private dataSmaCitraKasih: DataSMACitraKasih,
-    private dataSmkBerkarya: DataSMKBerkarya,
-    private dataSmkCitraBangsa: DataSMKCitraBangsa
+    private dataSmpNugraha: DataSMPNugraha
   ) {
     super()
   }
 
-  getInstansi(): Pusat {
+  getInstansi(): Cabang {
     return {
-      id: 41,
-      name: 'Binaan PP YTH',
-      type: InstansiType.PUSAT,
+      id: 1,
+      name: 'Cabang Padang',
+      type: InstansiType.CABANG,
+      pusat: this.dataPusat.getInstansi(),
       listSekolah: this.getListSekolah(),
       location: {
-        address: 'Jl. Kornea Rt 01/02 No. 115',
+        address: 'Jl. Kornea Rt 01/02 No. 10',
         city: 'Jakarta Utara',
         province: 'DKI Jakarta',
         country: 'Indonesia'
@@ -48,12 +48,12 @@ export class DataPusat extends DataInstansi<Pusat> {
   getKepalaInstansi(): KepalaInstansi {
     return {
       nik: 'KPS1',
-      name: 'Adrian Belawan',
+      name: 'Suhartini',
       instansi: this.getInstansi(),
       jabatan: JabatanInstansi.DIRUT,
-      phoneNumber: '0873-2345-3233',
+      phoneNumber: '0873-3242-3233',
       location: {
-        address: 'Jl. Kornea Rt 01/02 No. 1A',
+        address: 'Jl. Kornea Rt 01/02 No. 11',
         city: 'Jakarta Utara',
         province: 'DKI Jakarta',
         country: 'Indonesia'
@@ -64,7 +64,7 @@ export class DataPusat extends DataInstansi<Pusat> {
   getWakilKepalaInstansi(): WakilKepalaInstansi {
     return {
       nik: 'WKPS1',
-      name: 'Siti Khairudin',
+      name: 'Marufat Khairudin',
       instansi: this.getInstansi(),
       jabatan: JabatanInstansi.WA_DIRUT,
       kepala: this.getKepalaInstansi(),
@@ -82,25 +82,11 @@ export class DataPusat extends DataInstansi<Pusat> {
     return [
       {
         nik: 'MPS1',
-        name: 'Heru Prasetiya',
+        name: 'Herman Jatmoko',
         jabatan: JabatanInstansi.MANAGER,
         wakilKepala: this.getWakilKepalaInstansi(),
         instansi: this.getInstansi(),
         phoneNumber: '0873-2345-3233',
-        location: {
-          address: 'Jl. Kornea Rt 01/02 No. 3A',
-          city: 'Jakarta Utara',
-          province: 'DKI Jakarta',
-          country: 'Indonesia'
-        }
-      },
-      {
-        nik: 'MPS2',
-        name: 'Nurbaya',
-        jabatan: JabatanInstansi.MANAGER,
-        wakilKepala: this.getWakilKepalaInstansi(),
-        instansi: this.getInstansi(),
-        phoneNumber: '0873-4534-3233',
         location: {
           address: 'Jl. Kornea Rt 01/02 No. 3A',
           city: 'Jakarta Utara',
@@ -141,45 +127,16 @@ export class DataPusat extends DataInstansi<Pusat> {
           country: 'Indonesia'
         }
       },
-      {
-        nik: 'SPS3',
-        name: 'Kahar',
-        jabatan: JabatanInstansi.STAFF,
-        instansi: this.getInstansi(),
-        manager: this.getListManager()[1],
-        phoneNumber: '0896-2345-3233',
-        location: {
-          address: 'Jl. Kornea Rt 01/02 No. 6A',
-          city: 'Jakarta Utara',
-          province: 'DKI Jakarta',
-          country: 'Indonesia'
-        }
-      },
-      {
-        nik: 'SPS4',
-        name: 'Charly Inka',
-        jabatan: JabatanInstansi.STAFF,
-        instansi: this.getInstansi(),
-        manager: this.getListManager()[1],
-        phoneNumber: '0873-2345-3233',
-        location: {
-          address: 'Jl. Kornea Rt 01/02 No. 7A',
-          city: 'Jakarta Utara',
-          province: 'DKI Jakarta',
-          country: 'Indonesia'
-        }
-      }
     ]
   }
 
   getListSchoolData(): SchoolData[] {
     return [
-      this.dataPaudBulan,
       this.dataSdMarsudi,
+      this.dataSdTaraKinata,
       this.dataSmpKurnia,
-      this.dataSmaCitraKasih,
-      this.dataSmkBerkarya,
-      this.dataSmkCitraBangsa
+      this.dataSmpNugraha,
     ]
   }
+
 }

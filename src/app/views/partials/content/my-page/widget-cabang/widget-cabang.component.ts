@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { Instansi, Perwakilan } from 'src/app/core/_base/crud/models/hangtuah-organization';
+import { Instansi, Perwakilan, InstansiType, Cabang } from 'src/app/core/_base/crud/models/hangtuah-organization';
 import { DataInstansi } from 'src/app/core/generator/hangtuah/data-hangtuah';
 
 @Component({
@@ -18,8 +18,13 @@ export class WidgetCabangComponent {
   ngOnInit(): void {
     const instansi = this.data.getInstansi()
 
-    if (instansi instanceof Perwakilan) {
-      this.title = instansi.name
+    console.log(instansi);
+    console.log(instansi.constructor.toString());
+
+    if (instansi.type === InstansiType.PERWAKILAN) {
+      this.title = (instansi as Perwakilan).cabang.name
+    } else if(instansi.type === InstansiType.CABANG) {
+      this.title = (instansi as Cabang).pusat.name
     } else {
       this.title = ''
     }

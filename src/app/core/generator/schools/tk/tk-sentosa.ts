@@ -12,11 +12,11 @@ import {
   KepalaTataUsaha,
   StaffTataUsaha
 } from '../../../_base/crud/models/school-organization'
-import { TK } from './tk'
+import { DataTK } from './tk'
 
 
 @Injectable()
-export class TkSentosaGenerator extends TK implements SchoolData {
+export class DataTkSentosa extends DataTK implements SchoolData {
 
   getKepalaTataUsaha(): KepalaTataUsaha {
     return {

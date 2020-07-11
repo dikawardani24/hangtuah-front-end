@@ -1,10 +1,28 @@
 import { Perwakilan, InstansiType, KepalaInstansi, JabatanInstansi, WakilKepalaInstansi, Manager, Staff } from 'src/app/core/_base/crud/models/hangtuah-organization';
 import { DataInstansi } from '../data-hangtuah';
 import { DataCabangBelawan } from '../cabang/cabang-belawan';
+import { Injectable } from '@angular/core';
+import { SchoolData } from '../../school-org-generator';
+import { DataSDMarsudi } from '../../schools/sd/sd-marsudi';
+import { DataSDTarakinata } from '../../schools/sd/sd-tarakinata';
+import { DataSMPKurnia } from '../../schools/smp/smp-kurnia';
+import { DataSMPNugraha } from '../../schools/smp/smp-nugraha';
+import { DataSMACitraKasih } from '../../schools/sma/sma-citrakasih';
+import { DataSMKBerkarya } from '../../schools/smk/smk-berkarya';
+import { DataSMKCitraBangsa } from '../../schools/smk/smk-citrabangsa';
 
-
+@Injectable()
 export class DataPerwakilanSabang extends DataInstansi<Perwakilan> {
-  constructor(private dataCabangBelawan: DataCabangBelawan) {
+  constructor(
+    private dataCabangBelawan: DataCabangBelawan,
+    private dataSdMarsudi: DataSDMarsudi,
+    private dataSdTaraKinata: DataSDTarakinata,
+    private dataSmpKurnia: DataSMPKurnia,
+    private dataSmpNugraha: DataSMPNugraha,
+    private dataSmaCitraKasih: DataSMACitraKasih,
+    private dataSmkBerkarya: DataSMKBerkarya,
+    private dataSmkCitraBangsa: DataSMKCitraBangsa
+  ) {
     super()
   }
 
@@ -106,6 +124,18 @@ export class DataPerwakilanSabang extends DataInstansi<Perwakilan> {
           country: 'Indonesia'
         }
       },
+    ]
+  }
+
+  getListSchoolData(): SchoolData[] {
+    return [
+      this.dataSdMarsudi,
+      this.dataSdTaraKinata,
+      this.dataSmpKurnia,
+      this.dataSmpNugraha,
+      this.dataSmaCitraKasih,
+      this.dataSmkBerkarya,
+      this.dataSmkCitraBangsa
     ]
   }
 }

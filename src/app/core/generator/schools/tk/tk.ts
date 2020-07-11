@@ -1,6 +1,6 @@
 import { Grade, MataPelajaran } from '../../../_base/crud/models/school-organization'
 
-export class TK {
+export class DataTK {
   protected _getListGrade(): Grade[] {
     const listGrade: Grade[] = []
 

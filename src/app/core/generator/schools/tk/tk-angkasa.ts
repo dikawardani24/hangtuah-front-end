@@ -12,10 +12,10 @@ import {
   KepalaTataUsaha,
   StaffTataUsaha
 } from '../../../_base/crud/models/school-organization'
-import { TK } from './tk'
+import { DataTK } from './tk'
 
 @Injectable()
-export class TkAngkasaGenerator extends TK implements SchoolData {
+export class DataTkAngkasa extends DataTK implements SchoolData {
   getKepalaTataUsaha(): KepalaTataUsaha {
     return {
       nik: 'KPTU1234',
