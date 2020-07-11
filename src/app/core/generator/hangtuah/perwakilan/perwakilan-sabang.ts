@@ -1,10 +1,10 @@
 import { Perwakilan, InstansiType, KepalaInstansi, JabatanInstansi, WakilKepalaInstansi, Manager, Staff } from 'src/app/core/_base/crud/models/hangtuah-organization';
 import { DataInstansi } from '../data-hangtuah';
-import { CabangBelawan } from '../cabang/cabang-belawan';
+import { DataCabangBelawan } from '../cabang/cabang-belawan';
 
 
 export class PerwakilanSabang extends DataInstansi<Perwakilan> {
-  constructor(private cabangBelawan: CabangBelawan) {
+  constructor(private cabangBelawan: DataCabangBelawan) {
     super()
   }
 
@@ -59,13 +59,53 @@ export class PerwakilanSabang extends DataInstansi<Perwakilan> {
 
   getListManager(): Manager[] {
     return [
-
+      {
+        nik: 'MPS1',
+        name: 'Heru Prasetiya',
+        jabatan: JabatanInstansi.MANAGER,
+        wakilKepala: this.getWakilKepalaInstansi(),
+        instansi: this.getInstansi(),
+        phoneNumber: '0873-2345-3233',
+        location: {
+          address: 'Jl. Kornea Rt 01/02 No. 3A',
+          city: 'Jakarta Utara',
+          province: 'DKI Jakarta',
+          country: 'Indonesia'
+        }
+      },
     ]
   }
 
   getListStaff(): Staff[] {
     return [
-
+      {
+        nik: 'SPS1',
+        name: 'Jumadi Akhir',
+        jabatan: JabatanInstansi.STAFF,
+        manager: this.getListManager()[0],
+        instansi: this.getInstansi(),
+        phoneNumber: '0873-4563-3233',
+        location: {
+          address: 'Jl. Kornea Rt 01/02 No. 4A',
+          city: 'Jakarta Utara',
+          province: 'DKI Jakarta',
+          country: 'Indonesia'
+        }
+      },
+      {
+        nik: 'SPS2',
+        name: 'Johny Utama',
+        jabatan: JabatanInstansi.STAFF,
+        instansi: this.getInstansi(),
+        manager: this.getListManager()[0],
+        phoneNumber: '0873-2345-3322',
+        location: {
+          address: 'Jl. Kornea Rt 01/02 No. 5A',
+          city: 'Jakarta Utara',
+          province: 'DKI Jakarta',
+          country: 'Indonesia'
+        }
+      },
     ]
   }
 }

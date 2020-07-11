@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { generateData, Cabang } from 'src/app/core/_base/crud/models/data';
+import { Cabang } from 'src/app/core/_base/crud/models/hangtuah-organization';
 
 @Component({
   selector: 'kt-cabang',

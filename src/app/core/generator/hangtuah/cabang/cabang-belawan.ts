@@ -1,5 +1,12 @@
-import { HangtuahOrganization } from '../../hangtuah-org-generator';
-import { Cabang, KepalaInstansi, WakilKepalaInstansi, InstansiType, JabatanInstansi, Manager, Staff } from 'src/app/core/_base/crud/models/hangtuah-organization';
+import {
+  Cabang,
+  KepalaInstansi,
+  WakilKepalaInstansi,
+  InstansiType,
+  JabatanInstansi,
+  Manager,
+  Staff
+} from 'src/app/core/_base/crud/models/hangtuah-organization';
 import { Injectable } from '@angular/core';
 import { DataPusat } from '../pusat';
 import { DataSDMarsudi } from '../../schools/sd/sd-marsudi';
@@ -10,11 +17,10 @@ import { DataSMKCitraBangsa } from '../../schools/smk/smk-citrabangsa';
 import { DataSDTarakinata } from '../../schools/sd/sd-tarakinata';
 import { DataSMPNugraha } from '../../schools/smp/smp-nugraha';
 import { DataInstansi } from '../data-hangtuah';
-import { extend } from 'lodash';
 import { SchoolData } from '../../school-org-generator';
 
 @Injectable()
-export class CabangBelawan extends DataInstansi<Cabang> {
+export class DataCabangBelawan extends DataInstansi<Cabang> {
 
   constructor(
     private dataPusat: DataPusat,
@@ -80,13 +86,53 @@ export class CabangBelawan extends DataInstansi<Cabang> {
 
   getListManager(): Manager[] {
     return [
-      
+      {
+        nik: 'MPS1',
+        name: 'Herman Jatmoko',
+        jabatan: JabatanInstansi.MANAGER,
+        wakilKepala: this.getWakilKepalaInstansi(),
+        instansi: this.getInstansi(),
+        phoneNumber: '0873-2345-3233',
+        location: {
+          address: 'Jl. Kornea Rt 01/02 No. 3A',
+          city: 'Jakarta Utara',
+          province: 'DKI Jakarta',
+          country: 'Indonesia'
+        }
+      }
     ]
   }
 
   getListStaff(): Staff[] {
     return [
-
+      {
+        nik: 'SPS1',
+        name: 'Jumadi Akhir',
+        jabatan: JabatanInstansi.STAFF,
+        manager: this.getListManager()[0],
+        instansi: this.getInstansi(),
+        phoneNumber: '0873-4563-3233',
+        location: {
+          address: 'Jl. Kornea Rt 01/02 No. 4A',
+          city: 'Jakarta Utara',
+          province: 'DKI Jakarta',
+          country: 'Indonesia'
+        }
+      },
+      {
+        nik: 'SPS2',
+        name: 'Johny Utama',
+        jabatan: JabatanInstansi.STAFF,
+        instansi: this.getInstansi(),
+        manager: this.getListManager()[0],
+        phoneNumber: '0873-2345-3322',
+        location: {
+          address: 'Jl. Kornea Rt 01/02 No. 5A',
+          city: 'Jakarta Utara',
+          province: 'DKI Jakarta',
+          country: 'Indonesia'
+        }
+      },
     ]
   }
 
