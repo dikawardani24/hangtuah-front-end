@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { Dirut } from 'src/app/core/_base/crud/models/data';
+import { KepalaInstansi } from 'src/app/core/_base/crud/models/hangtuah-organization';
 
 @Component({
   selector: 'kt-widget-pengurus',
@@ -7,7 +7,7 @@ import { Dirut } from 'src/app/core/_base/crud/models/data';
 })
 export class WidgetPengurusComponent {
   @Input()
-  pengurus: Dirut
+  kepalaInstansi: KepalaInstansi
 
   constructor() {
 

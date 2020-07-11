@@ -1,8 +1,9 @@
-import { DataCabangBelawan } from './hangtuah/cabang/cabang-belawan';
-import { DataInstansi } from './hangtuah/data-hangtuah';
-import { Cabang } from '../_base/crud/models/hangtuah-organization';
+import { DataCabangBelawan } from '../hangtuah/cabang/cabang-belawan';
+import { DataInstansi } from '../hangtuah/data-hangtuah';
+import { Cabang } from '../../_base/crud/models/hangtuah-organization';
 import { Injectable } from '@angular/core';
 
+@Injectable()
 export class DataPoolCabang {
   constructor(private cabangBelawan: DataCabangBelawan) {
   }

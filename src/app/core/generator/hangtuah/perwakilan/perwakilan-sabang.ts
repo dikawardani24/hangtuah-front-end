@@ -3,8 +3,8 @@ import { DataInstansi } from '../data-hangtuah';
 import { DataCabangBelawan } from '../cabang/cabang-belawan';
 
 
-export class PerwakilanSabang extends DataInstansi<Perwakilan> {
-  constructor(private cabangBelawan: DataCabangBelawan) {
+export class DataPerwakilanSabang extends DataInstansi<Perwakilan> {
+  constructor(private dataCabangBelawan: DataCabangBelawan) {
     super()
   }
 
@@ -13,7 +13,7 @@ export class PerwakilanSabang extends DataInstansi<Perwakilan> {
       id: 1,
       name: 'Perwakilan Sabang',
       type: InstansiType.PERWAKILAN,
-      cabang: this.cabangBelawan.getInstansi(),
+      cabang: this.dataCabangBelawan.getInstansi(),
       listSekolah: this.getListSekolah(),
       location: {
         address: 'Jl. Habibah Rt 01/02 No. 10',

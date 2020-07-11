@@ -1,7 +1,12 @@
 import { KepalaInstansi, WakilKepalaInstansi, Manager, Staff, Instansi } from '../_base/crud/models/hangtuah-organization';
 import { Organization, PersonNode } from './generator';
-import { Sekolah } from '../_base/crud/models/school-organization';
+import { Sekolah, SchoolType } from '../_base/crud/models/school-organization';
 import { SchoolData } from './school-org-generator';
+
+export interface TotalType {
+  total: number,
+  type: SchoolType
+}
 
 export interface HangtuahData<T extends Instansi> {
   getInstansi(): T
@@ -10,6 +15,13 @@ export interface HangtuahData<T extends Instansi> {
   getListManager(): Manager[]
   getListStaff(): Staff[]
   getListSchoolData(): SchoolData[]
+  getTotalPaud(): number
+  getTotalTK(): number
+  getTotalSD(): number
+  getTotalSmp(): number
+  getTotalSma(): number
+  getTotalSmk(): number
+  getTotalTypes(): TotalType[]
 }
 
 export class HangtuahOrganization<T extends Instansi> extends Organization<HangtuahData<T>> {

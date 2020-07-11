@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Perwakilan, generateData } from 'src/app/core/_base/crud/models/data';
+import { DataInstansi } from 'src/app/core/generator/hangtuah/data-hangtuah';
+import { Perwakilan } from 'src/app/core/_base/crud/models/hangtuah-organization';
+import { DataPoolPerwakilan } from 'src/app/core/generator/data-pool/perwakilan-data-pool';
 
 @Component({
   selector: 'kt-perwakilan',
@@ -7,13 +9,13 @@ import { Perwakilan, generateData } from 'src/app/core/_base/crud/models/data';
   styleUrls: ['./perwakilan.component.scss']
 })
 export class PerwakilanComponent implements OnInit {
+  listDataPool: DataInstansi<Perwakilan>[] = []
 
-  schoolGroups: Perwakilan[] = []
-
-  constructor() { }
+  constructor(
+    private perwakilanDataPool: DataPoolPerwakilan
+  ) { }
 
   ngOnInit() {
-    const data = generateData()
-    this.schoolGroups = data.listPerwakilan
+    this.listDataPool = this.perwakilanDataPool.getListData()
   }
 }

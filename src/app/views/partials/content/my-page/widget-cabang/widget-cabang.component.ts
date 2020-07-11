@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
-import { InstansiPengelola, Perwakilan } from 'src/app/core/_base/crud/models/data';
+import { Instansi, Perwakilan } from 'src/app/core/_base/crud/models/hangtuah-organization';
+import { DataInstansi } from 'src/app/core/generator/hangtuah/data-hangtuah';
 
 @Component({
   selector: 'kt-widget-cabang',
@@ -7,18 +8,20 @@ import { InstansiPengelola, Perwakilan } from 'src/app/core/_base/crud/models/da
 })
 export class WidgetCabangComponent {
   @Input()
-  schoolGroup: InstansiPengelola
-  cabang: string
+  data: DataInstansi<Instansi>
+  title: string
 
   constructor() {
 
   }
 
   ngOnInit(): void {
-    if (this.schoolGroup instanceof Perwakilan) {
-      this.cabang = this.schoolGroup.instansiCabang.name
+    const instansi = this.data.getInstansi()
+
+    if (instansi instanceof Perwakilan) {
+      this.title = instansi.name
     } else {
-      this.cabang = ''
+      this.title = ''
     }
   }
 }

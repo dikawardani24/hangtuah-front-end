@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { SchoolType } from 'src/app/core/_base/crud/models/school';
+import { SchoolType } from 'src/app/core/_base/crud/models/school-organization';
 
 @Component({
   selector: 'kt-widget-school',

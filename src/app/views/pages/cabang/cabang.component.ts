@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Cabang } from 'src/app/core/_base/crud/models/hangtuah-organization';
+import { DataPoolCabang } from 'src/app/core/generator/data-pool/cabang-data-pool';
+import { DataInstansi } from 'src/app/core/generator/hangtuah/data-hangtuah';
 
 @Component({
   selector: 'kt-cabang',
@@ -7,12 +9,13 @@ import { Cabang } from 'src/app/core/_base/crud/models/hangtuah-organization';
   styleUrls: ['./cabang.component.scss']
 })
 export class CabangComponent implements OnInit {
-  schoolGroups: Cabang[] = []
+  listDataPool: DataInstansi<Cabang>[] = []
 
-  constructor() { }
+  constructor(
+    private cabangDataPool: DataPoolCabang
+  ) { }
 
   ngOnInit() {
-    const data = generateData()
-    this.schoolGroups = data.listCabang
+    this.listDataPool = this.cabangDataPool.getListData()
   }
 }

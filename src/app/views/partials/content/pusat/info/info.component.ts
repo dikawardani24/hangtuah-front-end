@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Instansi } from 'src/app/core/_base/crud/models/hangtuah-organization';
+import { DataInstansi } from 'src/app/core/generator/hangtuah/data-hangtuah';
 
 @Component({
   selector: 'kt-info',
@@ -6,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./info.component.scss']
 })
 export class InfoComponent implements OnInit {
+  dataInstansi: DataInstansi<Instansi>
 
   constructor() { }
 
