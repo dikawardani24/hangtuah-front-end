@@ -12,7 +12,7 @@ export class PageConfig {
         desc: 'Data sekolah yang dikelola pusat Hang Tuah di seluruh Indonesia'
       },
     },
-    'my-page': {
+    cabang: {
       page: {
         title: 'Data Sekolah di Cabang',
         desc: 'Data sekolah yang dikelola cabang Hang Tuah di seluruh Indonesia'

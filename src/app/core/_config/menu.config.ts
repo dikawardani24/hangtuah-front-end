@@ -11,10 +11,10 @@ export class MenuConfig {
           translate: 'MENU.DASHBOARD',
         },
         {
-          title: 'Hirearchy Organization',
+          title: 'Struktur Organisasi',
           root: true,
           alignment: 'left',
-          page: '/my-page',
+          page: '/pusat',
         },
       ]
     },

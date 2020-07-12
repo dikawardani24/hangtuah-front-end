@@ -6,29 +6,29 @@ import {
   JabatanInstansi,
   Manager,
   Staff
-} from '../../../_base/crud/models/hangtuah-organization';
+} from 'src/app/core/_base/crud/models/hangtuah-organization';
 import { Injectable } from '@angular/core';
 import { DataPusat } from '../pusat';
 import { DataSDMarsudi } from '../../schools/sd/sd-marsudi';
 import { DataSMPKurnia } from '../../schools/smp/smp-kurnia';
+import { DataSMACitraKasih } from '../../schools/sma/sma-citrakasih';
+import { DataSMKBerkarya } from '../../schools/smk/smk-berkarya';
+import { DataSMKCitraBangsa } from '../../schools/smk/smk-citrabangsa';
 import { DataSDTarakinata } from '../../schools/sd/sd-tarakinata';
 import { DataSMPNugraha } from '../../schools/smp/smp-nugraha';
 import { DataInstansi } from '../data-hangtuah';
 import { SchoolData } from '../../school-org-generator';
-import { DataPaudBulan } from '../../schools/paud/paud-bulan';
-import { DataSMKBerkarya } from '../../schools/smk/smk-berkarya';
-import { DataSMKCitraBangsa } from '../../schools/smk/smk-citrabangsa';
 
 @Injectable()
-export class DataCabangPadang extends DataInstansi<Cabang> {
+export class DataCabangKupang extends DataInstansi<Cabang> {
 
   constructor(
     private dataPusat: DataPusat,
-    private dataPaudBulan: DataPaudBulan,
     private dataSdMarsudi: DataSDMarsudi,
     private dataSdTaraKinata: DataSDTarakinata,
     private dataSmpKurnia: DataSMPKurnia,
     private dataSmpNugraha: DataSMPNugraha,
+    private dataSmaCitraKasih: DataSMACitraKasih,
     private dataSmkBerkarya: DataSMKBerkarya,
     private dataSmkCitraBangsa: DataSMKCitraBangsa
   ) {
@@ -38,14 +38,14 @@ export class DataCabangPadang extends DataInstansi<Cabang> {
   getInstansi(): Cabang {
     return {
       id: 1,
-      name: 'Cabang Padang',
+      name: 'Cabang Kupang',
       type: InstansiType.CABANG,
       pusat: this.dataPusat.getInstansi(),
       listSekolah: this.getListSekolah(),
       location: {
         address: 'Jl. Kornea Rt 01/02 No. 10',
-        city: 'Jakarta Utara',
-        province: 'DKI Jakarta',
+        city: 'Kupang',
+        province: 'Nusa Tenggara Barat',
         country: 'Indonesia'
       }
     }
@@ -54,12 +54,12 @@ export class DataCabangPadang extends DataInstansi<Cabang> {
   getKepalaInstansi(): KepalaInstansi {
     return {
       nik: 'KPS1',
-      name: 'Susanto',
+      name: 'Nani Wijaya',
       instansi: this.getInstansi(),
       jabatan: JabatanInstansi.DIRUT,
       phoneNumber: '0873-3242-3233',
       location: {
-        address: 'Jl. Ahmad Yani Rt 01/02 No. 11',
+        address: 'Jl. Kornea Rt 01/02 No. 11',
         city: 'Jakarta Utara',
         province: 'DKI Jakarta',
         country: 'Indonesia'
@@ -89,20 +89,6 @@ export class DataCabangPadang extends DataInstansi<Cabang> {
       {
         nik: 'MPS1',
         name: 'Herman Jatmoko',
-        jabatan: JabatanInstansi.MANAGER,
-        wakilKepala: this.getWakilKepalaInstansi(),
-        instansi: this.getInstansi(),
-        phoneNumber: '0873-2345-3233',
-        location: {
-          address: 'Jl. Kornea Rt 01/02 No. 3A',
-          city: 'Jakarta Utara',
-          province: 'DKI Jakarta',
-          country: 'Indonesia'
-        }
-      },
-      {
-        nik: 'MPS2',
-        name: 'Nani Jatmoko',
         jabatan: JabatanInstansi.MANAGER,
         wakilKepala: this.getWakilKepalaInstansi(),
         instansi: this.getInstansi(),
@@ -147,86 +133,19 @@ export class DataCabangPadang extends DataInstansi<Cabang> {
           country: 'Indonesia'
         }
       },
-
-      {
-        nik: 'SPS3',
-        name: 'Septian',
-        jabatan: JabatanInstansi.STAFF,
-        manager: this.getListManager()[1],
-        instansi: this.getInstansi(),
-        phoneNumber: '0873-4563-3233',
-        location: {
-          address: 'Jl. Kornea Rt 01/02 No. 4A',
-          city: 'Jakarta Utara',
-          province: 'DKI Jakarta',
-          country: 'Indonesia'
-        }
-      },
-      {
-        nik: 'SPS4',
-        name: 'Hartono',
-        jabatan: JabatanInstansi.STAFF,
-        instansi: this.getInstansi(),
-        manager: this.getListManager()[1],
-        phoneNumber: '0873-2345-3322',
-        location: {
-          address: 'Jl. Kornea Rt 01/02 No. 5A',
-          city: 'Jakarta Utara',
-          province: 'DKI Jakarta',
-          country: 'Indonesia'
-        }
-      },
-      {
-        nik: 'SPS5',
-        name: 'Erlang',
-        jabatan: JabatanInstansi.STAFF,
-        manager: this.getListManager()[1],
-        instansi: this.getInstansi(),
-        phoneNumber: '0873-4563-3233',
-        location: {
-          address: 'Jl. Kornea Rt 01/02 No. 4A',
-          city: 'Jakarta Utara',
-          province: 'DKI Jakarta',
-          country: 'Indonesia'
-        }
-      },
-      {
-        nik: 'SPS6',
-        name: 'Sakti Satria',
-        jabatan: JabatanInstansi.STAFF,
-        instansi: this.getInstansi(),
-        manager: this.getListManager()[1],
-        phoneNumber: '0873-2345-3322',
-        location: {
-          address: 'Jl. Kornea Rt 01/02 No. 5A',
-          city: 'Jakarta Utara',
-          province: 'DKI Jakarta',
-          country: 'Indonesia'
-        }
-      },
     ]
   }
 
   getListSchoolData(): SchoolData[] {
-    const listData: SchoolData[] = [
+    return [
       this.dataSdMarsudi,
-      this.dataPaudBulan,
       this.dataSdTaraKinata,
       this.dataSmpKurnia,
       this.dataSmpNugraha,
+      this.dataSmaCitraKasih,
+      this.dataSmkBerkarya,
+      this.dataSmkCitraBangsa
     ]
-
-    for (let i = 0; i < 10; i++) {
-      if (i % 2 === 0) {
-        listData.push(this.dataSmpKurnia)
-        listData.push(this.dataSmkBerkarya)
-      } else {
-        listData.push(this.dataSmpNugraha)
-        listData.push(this.dataSmkCitraBangsa)
-      }
-    }
-
-    return listData
   }
 
 }

@@ -15,22 +15,20 @@ import { DataSDTarakinata } from '../../schools/sd/sd-tarakinata';
 import { DataSMPNugraha } from '../../schools/smp/smp-nugraha';
 import { DataInstansi } from '../data-hangtuah';
 import { SchoolData } from '../../school-org-generator';
-import { DataPaudBulan } from '../../schools/paud/paud-bulan';
-import { DataSMKBerkarya } from '../../schools/smk/smk-berkarya';
-import { DataSMKCitraBangsa } from '../../schools/smk/smk-citrabangsa';
+import { DataSMACitraKasih } from '../../schools/sma/sma-citrakasih';
+import { DataSMAHercules } from '../../schools/sma/sma-hercules';
 
 @Injectable()
-export class DataCabangPadang extends DataInstansi<Cabang> {
+export class DataCabangJakarta extends DataInstansi<Cabang> {
 
   constructor(
     private dataPusat: DataPusat,
-    private dataPaudBulan: DataPaudBulan,
     private dataSdMarsudi: DataSDMarsudi,
     private dataSdTaraKinata: DataSDTarakinata,
     private dataSmpKurnia: DataSMPKurnia,
     private dataSmpNugraha: DataSMPNugraha,
-    private dataSmkBerkarya: DataSMKBerkarya,
-    private dataSmkCitraBangsa: DataSMKCitraBangsa
+    private dataSmaCK: DataSMACitraKasih,
+    private dataSmaHR: DataSMAHercules
   ) {
     super()
   }
@@ -38,13 +36,13 @@ export class DataCabangPadang extends DataInstansi<Cabang> {
   getInstansi(): Cabang {
     return {
       id: 1,
-      name: 'Cabang Padang',
+      name: 'Cabang Jakarta',
       type: InstansiType.CABANG,
       pusat: this.dataPusat.getInstansi(),
       listSekolah: this.getListSekolah(),
       location: {
         address: 'Jl. Kornea Rt 01/02 No. 10',
-        city: 'Jakarta Utara',
+        city: 'Jakarta Timur',
         province: 'DKI Jakarta',
         country: 'Indonesia'
       }
@@ -54,14 +52,14 @@ export class DataCabangPadang extends DataInstansi<Cabang> {
   getKepalaInstansi(): KepalaInstansi {
     return {
       nik: 'KPS1',
-      name: 'Susanto',
+      name: 'Ahmad Dinejad',
       instansi: this.getInstansi(),
       jabatan: JabatanInstansi.DIRUT,
       phoneNumber: '0873-3242-3233',
       location: {
         address: 'Jl. Ahmad Yani Rt 01/02 No. 11',
-        city: 'Jakarta Utara',
-        province: 'DKI Jakarta',
+        city: 'Bogor',
+        province: 'Jawa Barat',
         country: 'Indonesia'
       }
     }
@@ -210,22 +208,18 @@ export class DataCabangPadang extends DataInstansi<Cabang> {
   getListSchoolData(): SchoolData[] {
     const listData: SchoolData[] = [
       this.dataSdMarsudi,
-      this.dataPaudBulan,
       this.dataSdTaraKinata,
       this.dataSmpKurnia,
       this.dataSmpNugraha,
     ]
 
-    for (let i = 0; i < 10; i++) {
-      if (i % 2 === 0) {
-        listData.push(this.dataSmpKurnia)
-        listData.push(this.dataSmkBerkarya)
+    for (let i = 0; i < 50; i++) {
+      if (i%2 === 0) {
+        listData.push(this.dataSmaCK)
       } else {
-        listData.push(this.dataSmpNugraha)
-        listData.push(this.dataSmkCitraBangsa)
+        listData.push(this.dataSmaHR)
       }
     }
-
     return listData
   }
 

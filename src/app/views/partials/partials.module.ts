@@ -5,7 +5,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgApexchartsModule } from 'ng-apexcharts';
 // NgBootstrap
-import { NgbDropdownModule, NgbTabsetModule, NgbTooltipModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgbDropdownModule, NgbTabsetModule, NgbTooltipModule, NgbModule } from '@ng-bootstrap/ng-bootstrap';
 // Perfect Scrollbar
 import { PerfectScrollbarModule } from 'ngx-perfect-scrollbar';
 // Core module
@@ -97,11 +97,11 @@ import { OrgChartModule } from '@mondal/org-chart';
 import {
   WidgetDetailEmployeeCabangComponent
 } from './content/cabang/widget-detail-employee-cabang/widget-detail-employee-cabang.component';
-import { MatExpansionModule } from '@angular/material/expansion';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { WidgetPengurusComponent } from './content/cabang/widget-pengurus/widget-pengurus.component';
 import { WidgetCabangComponent } from './content/cabang/widget-cabang/widget-cabang.component';
 import { WidgetSchoolComponent } from './content/cabang/widget-school/widget-school.component';
+import { WidgetListSchollCabangComponent } from './content/cabang/widget-list-scholl-cabang/widget-list-scholl-cabang.component';
 
 @NgModule({
   declarations: [
@@ -158,7 +158,8 @@ import { WidgetSchoolComponent } from './content/cabang/widget-school/widget-sch
     WidgetDetailEmployeeCabangComponent,
     WidgetPengurusComponent,
     WidgetCabangComponent,
-    WidgetSchoolComponent
+    WidgetSchoolComponent,
+    WidgetListSchollCabangComponent,
   ],
   exports: [
     WidgetModule,
@@ -211,8 +212,6 @@ import { WidgetSchoolComponent } from './content/cabang/widget-school/widget-sch
     Dropdown4Component,
     Dropdown5Component,
 
-    MatExpansionModule,
-
     WidgetDetailCabangComponent,
     DialogDetailComponent,
     WidgetDetailCabangComponent,
@@ -221,6 +220,7 @@ import { WidgetSchoolComponent } from './content/cabang/widget-school/widget-sch
     WidgetPengurusComponent,
     WidgetCabangComponent,
     WidgetSchoolComponent,
+    WidgetListSchollCabangComponent,
   ],
   imports: [
     CommonModule,
@@ -258,13 +258,25 @@ import { WidgetSchoolComponent } from './content/cabang/widget-school/widget-sch
     MatTreeModule,
     NgxOrgChartModule,
     OrgChartModule,
-    MatExpansionModule,
+    NgbModule,
 
     // ng-bootstrap modules
     NgbDropdownModule,
     NgbTabsetModule,
     NgbTooltipModule,
   ],
+
+  entryComponents: [
+    WidgetDetailCabangComponent,
+    DialogDetailComponent,
+    WidgetDetailCabangComponent,
+    WidgetStructureCabangComponent,
+    WidgetDetailEmployeeCabangComponent,
+    WidgetPengurusComponent,
+    WidgetCabangComponent,
+    WidgetSchoolComponent,
+    WidgetListSchollCabangComponent
+  ]
 })
 export class PartialsModule {
 }

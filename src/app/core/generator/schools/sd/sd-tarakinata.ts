@@ -84,8 +84,8 @@ export class DataSDTarakinata extends DataSD implements SchoolData {
   getSekolah(): Sekolah {
     return {
       id: 'SD2',
-      name: 'SD Tarakinata',
-      type: SchoolType.PAUD,
+      name: 'SD Tarakinata Maju Jaya Bersama',
+      type: SchoolType.SD,
       phoneNumber: '021-8738728',
       location: {
         address: 'Jl. Pangeran Diponegoro Rt 011/06 No. 110A',

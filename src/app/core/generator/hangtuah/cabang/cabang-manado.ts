@@ -15,22 +15,16 @@ import { DataSDTarakinata } from '../../schools/sd/sd-tarakinata';
 import { DataSMPNugraha } from '../../schools/smp/smp-nugraha';
 import { DataInstansi } from '../data-hangtuah';
 import { SchoolData } from '../../school-org-generator';
-import { DataPaudBulan } from '../../schools/paud/paud-bulan';
-import { DataSMKBerkarya } from '../../schools/smk/smk-berkarya';
-import { DataSMKCitraBangsa } from '../../schools/smk/smk-citrabangsa';
 
 @Injectable()
-export class DataCabangPadang extends DataInstansi<Cabang> {
+export class DataCabangManado extends DataInstansi<Cabang> {
 
   constructor(
     private dataPusat: DataPusat,
-    private dataPaudBulan: DataPaudBulan,
     private dataSdMarsudi: DataSDMarsudi,
     private dataSdTaraKinata: DataSDTarakinata,
     private dataSmpKurnia: DataSMPKurnia,
-    private dataSmpNugraha: DataSMPNugraha,
-    private dataSmkBerkarya: DataSMKBerkarya,
-    private dataSmkCitraBangsa: DataSMKCitraBangsa
+    private dataSmpNugraha: DataSMPNugraha
   ) {
     super()
   }
@@ -38,14 +32,14 @@ export class DataCabangPadang extends DataInstansi<Cabang> {
   getInstansi(): Cabang {
     return {
       id: 1,
-      name: 'Cabang Padang',
+      name: 'Cabang Manado',
       type: InstansiType.CABANG,
       pusat: this.dataPusat.getInstansi(),
       listSekolah: this.getListSekolah(),
       location: {
         address: 'Jl. Kornea Rt 01/02 No. 10',
-        city: 'Jakarta Utara',
-        province: 'DKI Jakarta',
+        city: 'Manado',
+        province: 'Sulawesi Tengah',
         country: 'Indonesia'
       }
     }
@@ -54,7 +48,7 @@ export class DataCabangPadang extends DataInstansi<Cabang> {
   getKepalaInstansi(): KepalaInstansi {
     return {
       nik: 'KPS1',
-      name: 'Susanto',
+      name: 'Erika Christiani',
       instansi: this.getInstansi(),
       jabatan: JabatanInstansi.DIRUT,
       phoneNumber: '0873-3242-3233',
@@ -208,25 +202,12 @@ export class DataCabangPadang extends DataInstansi<Cabang> {
   }
 
   getListSchoolData(): SchoolData[] {
-    const listData: SchoolData[] = [
+    return [
       this.dataSdMarsudi,
-      this.dataPaudBulan,
       this.dataSdTaraKinata,
       this.dataSmpKurnia,
       this.dataSmpNugraha,
     ]
-
-    for (let i = 0; i < 10; i++) {
-      if (i % 2 === 0) {
-        listData.push(this.dataSmpKurnia)
-        listData.push(this.dataSmkBerkarya)
-      } else {
-        listData.push(this.dataSmpNugraha)
-        listData.push(this.dataSmkCitraBangsa)
-      }
-    }
-
-    return listData
   }
 
 }
