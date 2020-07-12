@@ -86,9 +86,6 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatDialogModule } from '@angular/material/dialog';
-import { WidgetCabangComponent } from './content/cabang/widget-cabang/widget-cabang.component';
-import { WidgetPengurusComponent } from './content/cabang/widget-pengurus/widget-pengurus.component';
-import { WidgetSchoolComponent } from './content/cabang/widget-school/widget-school.component';
 import { MatTreeModule } from '@angular/material/tree';
 import { SchoolItemModule } from './content/schooll-list/school-item/school-item.module';
 import { DialogDetailComponent } from './content/schooll-list/dialog-detail/dialog-detail.component';
@@ -100,6 +97,11 @@ import { OrgChartModule } from '@mondal/org-chart';
 import {
   WidgetDetailEmployeeCabangComponent
 } from './content/cabang/widget-detail-employee-cabang/widget-detail-employee-cabang.component';
+import { MatExpansionModule } from '@angular/material/expansion';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { WidgetPengurusComponent } from './content/cabang/widget-pengurus/widget-pengurus.component';
+import { WidgetCabangComponent } from './content/cabang/widget-cabang/widget-cabang.component';
+import { WidgetSchoolComponent } from './content/cabang/widget-school/widget-school.component';
 
 @NgModule({
   declarations: [
@@ -149,14 +151,14 @@ import {
     Dropdown4Component,
     Dropdown5Component,
 
-    WidgetSchoolComponent,
-    WidgetCabangComponent,
-    WidgetPengurusComponent,
     DialogDetailComponent,
     InfoComponent,
     WidgetDetailCabangComponent,
     WidgetStructureCabangComponent,
-    WidgetDetailEmployeeCabangComponent
+    WidgetDetailEmployeeCabangComponent,
+    WidgetPengurusComponent,
+    WidgetCabangComponent,
+    WidgetSchoolComponent
   ],
   exports: [
     WidgetModule,
@@ -209,10 +211,16 @@ import {
     Dropdown4Component,
     Dropdown5Component,
 
-    WidgetSchoolComponent,
-    WidgetCabangComponent,
+    MatExpansionModule,
+
+    WidgetDetailCabangComponent,
+    DialogDetailComponent,
+    WidgetDetailCabangComponent,
+    WidgetStructureCabangComponent,
+    WidgetDetailEmployeeCabangComponent,
     WidgetPengurusComponent,
-    WidgetDetailCabangComponent
+    WidgetCabangComponent,
+    WidgetSchoolComponent,
   ],
   imports: [
     CommonModule,
@@ -228,6 +236,7 @@ import {
     // angular material modules
     MatButtonModule,
     MatMenuModule,
+    MatFormFieldModule,
     MatSelectModule,
     MatInputModule,
     MatTableModule,
@@ -249,18 +258,13 @@ import {
     MatTreeModule,
     NgxOrgChartModule,
     OrgChartModule,
+    MatExpansionModule,
 
     // ng-bootstrap modules
     NgbDropdownModule,
     NgbTabsetModule,
     NgbTooltipModule,
   ],
-  entryComponents: [
-    DialogDetailComponent,
-    WidgetDetailCabangComponent,
-    WidgetStructureCabangComponent,
-    WidgetDetailEmployeeCabangComponent
-  ]
 })
 export class PartialsModule {
 }

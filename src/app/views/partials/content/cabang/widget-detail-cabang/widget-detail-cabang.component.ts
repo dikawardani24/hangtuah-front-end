@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, Inject } from '@angular/core';
-import { Cabang } from 'src/app/core/_base/crud/models/hangtuah-organization';
+import { Cabang, Instansi, Pusat, Perwakilan, InstansiType } from 'src/app/core/_base/crud/models/hangtuah-organization';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 
 @Component({
@@ -9,18 +9,36 @@ import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 })
 export class WidgetDetailCabangComponent implements OnInit {
   title: string
+  pusat: Pusat
+  cabang: Cabang
 
   constructor(
     public dialogRef: MatDialogRef<WidgetDetailCabangComponent>,
-    @Inject(MAT_DIALOG_DATA) public selectedCabang: Cabang
+    @Inject(MAT_DIALOG_DATA) public selectedInstansi: Instansi
   ) {}
 
   close() {
     this.dialogRef.close();
   }
 
+  isPerwakilan(): boolean {
+    return this.selectedInstansi.type === InstansiType.PERWAKILAN
+  }
+
   ngOnInit(): void {
-    this.title = `Detail Data ${this.selectedCabang.name}`
+    console.log(this.selectedInstansi);
+
+    const type = this.selectedInstansi.type
+    this.title = `Detail Data ${this.selectedInstansi.name}`
+
+    if (type === InstansiType.CABANG) {
+      this.pusat = (this.selectedInstansi as Cabang).pusat
+    } else if (type === InstansiType.PERWAKILAN) {
+      this.cabang = (this.selectedInstansi as Perwakilan).cabang
+      this.pusat = this.cabang.pusat
+    } else if(type === InstansiType.PUSAT) {
+      this.pusat = this.selectedInstansi as Pusat
+    }
   }
 
 }

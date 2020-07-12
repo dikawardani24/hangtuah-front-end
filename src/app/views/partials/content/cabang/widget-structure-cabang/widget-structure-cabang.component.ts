@@ -1,6 +1,6 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { DataInstansi } from 'src/app/core/generator/hangtuah/data-hangtuah';
-import { Cabang, JabatanInstansi } from 'src/app/core/_base/crud/models/hangtuah-organization';
+import { Cabang, JabatanInstansi, Instansi, Perwakilan, Pusat, InstansiType } from 'src/app/core/_base/crud/models/hangtuah-organization';
 import { MAT_DIALOG_DATA, MatDialogRef, MatDialogConfig, MatDialog } from '@angular/material/dialog';
 import { HangtuahOrganization } from 'src/app/core/generator/hangtuah-org-generator';
 import { WidgetDetailEmployeeCabangComponent } from '../widget-detail-employee-cabang/widget-detail-employee-cabang.component';
@@ -35,7 +35,7 @@ export class WidgetStructureCabangComponent implements OnInit {
   constructor(
     public dialog: MatDialog,
     public dialogRef: MatDialogRef<WidgetStructureCabangComponent>,
-    @Inject(MAT_DIALOG_DATA) private dataCabang: DataInstansi<Cabang>
+    @Inject(MAT_DIALOG_DATA) private dataCabang: DataInstansi<Instansi>
   ) { }
 
   viewDataEmployee(event: PersonNode) {
@@ -57,10 +57,23 @@ export class WidgetStructureCabangComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.nodes = new HangtuahOrganization<Cabang>(this.dataCabang).getStructure();
-    const instansi = this.dataCabang.getInstansi();
+    const instansi = this.dataCabang.getInstansi()
+
     this.title = `Struktur Organisasi ${instansi.name}`
-    this.subTitle = instansi.pusat.name
+
+    const type = instansi.type
+
+    if (type === InstansiType.CABANG) {
+      this.subTitle = (instansi as Cabang).pusat.name
+      this.nodes = new HangtuahOrganization<Cabang>(this.dataCabang as DataInstansi<Cabang>).getStructure();
+    } else if (type === InstansiType.PERWAKILAN) {
+      this.subTitle = (instansi as Perwakilan).cabang.name
+      this.nodes = new HangtuahOrganization<Perwakilan>(this.dataCabang as DataInstansi<Perwakilan>).getStructure();
+    } else if (type === InstansiType.PUSAT) {
+      this.subTitle = ''
+      this.nodes = new HangtuahOrganization<Pusat>(this.dataCabang as DataInstansi<Pusat>).getStructure();
+    }
+
 
     this.totalJabatan.push({
       total: 1,

@@ -3,7 +3,6 @@ import { Instansi, Perwakilan, InstansiType, Cabang } from '../../../../../core/
 import { DataInstansi } from '../../../../../core/generator/hangtuah/data-hangtuah';
 import { MatDialogConfig, MatDialog } from '@angular/material/dialog';
 import { WidgetDetailCabangComponent } from '../widget-detail-cabang/widget-detail-cabang.component';
-import { WidgetStructureCabangComponent } from '../widget-structure-cabang/widget-structure-cabang.component';
 
 @Component({
   selector: 'kt-widget-cabang',
