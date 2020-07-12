@@ -18,13 +18,11 @@
     </div>
     <!-- End Pengurus -->
     <!-- Start School Total -->
-    <div fxLayout="row wrap" fxLayout.lt-sm="column" fxLayoutGap="5px" fxLayoutAlign="flex-start">
-      <ng-container *ngFor="let item of data.getTotalTypes()">
-        <kt-widget-school [total]="item.total" [schoolType]="item.type" [dataInstansi]="data" fxFlex="0 1 calc(33.3% - 50px)"
-          fxFlex.lt-md="0 1 calc(50% - 50px)">
-        </kt-widget-school>
-      </ng-container>
+    <div class="row">
+      <div class="col-xl-6" *ngFor="let item of data.getTotalTypes()">
+        <kt-widget-school [total]="item.total" [schoolType]="item.type" [dataInstansi]="data">
+      </kt-widget-school>
+      </div>
     </div>
-
   </div>
 </div>

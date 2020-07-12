@@ -9,12 +9,12 @@
       </div>
     </div>
     <div class="card-toolbar">
-      <a href="javascript:void(0)" class="btn btn-light btn-sm font-weight-bold mr-3" (click)="close()">Tutup</a>
+      <a href="javascript:void(0)" class="btn btn-primary btn-sm font-weight-bold mr-3" (click)="close()">Tutup</a>
     </div>
   </div>
   <div class="card-body">
     <div class="row">
-      <div class="col-xl-4" style="margin-top: 10px;" *ngFor="let item of listSekolah">
+      <div class="col-xl-4" style="margin-top: 20px;" *ngFor="let item of listSekolah">
         <kt-widget-item-scholl-cabang [item]="item"></kt-widget-item-scholl-cabang>
       </div>
     </div>
