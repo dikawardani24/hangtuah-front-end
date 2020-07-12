@@ -1,0 +1,39 @@
+<div class="card card-custom card-stretch gutter-b">
+  <div class="card-header">
+    <div class="card-title">
+      <div class="symbol symbol-40 symbol-light-success mr-5" style="margin-top: 10px;">
+        <div class="d-flex flex-column flex-grow-1 font-weight-bold" style="margin-top: 10px;">
+          <a href="#" class="text-dark text-hover-primary mb-1 font-size-lg">{{title}}</a>
+          <span class="text-muted font-size-sm">{{subTitle}}</span>
+        </div>
+      </div>
+    </div>
+    <div class="card-toolbar">
+      <a href="javascript:void(0)" class="btn btn-light btn-sm font-weight-bold mr-3" (click)="close()">Tutup</a>
+    </div>
+  </div>
+
+  <div class="card-body">
+    <div class="row">
+      <div class="col-xl-12">
+        <mui-org-chart [topEmployee]="nodes" direction="vertical" (itemClick)="viewDataEmployee($event)"></mui-org-chart>
+      </div>
+    </div>
+  </div>
+
+  <!-- <div class="card-footer">
+    <div fxLayout="row wrap" fxLayout.lt-sm="column" fxLayoutGap="5px" fxLayoutAlign="flex-start">
+      <ng-container *ngFor="let item of totalJabatan">
+        <div fxFlex>
+          <div class="col bg-light-{{item.color}} px-2 py-2 rounded-sm mr-2 mb-2">
+            <div class="row">
+              <div class="col-xl-12">
+                <label class="text-{{item.color}} font-weight-bold">{{item.total}} {{item.jabatan}}</label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </ng-container>
+    </div>
+  </div> -->
+</div>

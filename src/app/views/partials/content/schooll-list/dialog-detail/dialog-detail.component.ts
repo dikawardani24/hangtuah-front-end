@@ -5,6 +5,7 @@ import { FoodNode } from '../school-item/school-item.component';
 @Component({
   selector: 'kt-dialog-detail',
   templateUrl: './dialog-detail.component.html',
+  styleUrls: ['./dialog-detail.component.scss']
 })
 export class DialogDetailComponent implements OnInit {
 

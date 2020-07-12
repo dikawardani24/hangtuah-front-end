@@ -48,12 +48,12 @@ export class DataCabangPadang extends DataInstansi<Cabang> {
   getKepalaInstansi(): KepalaInstansi {
     return {
       nik: 'KPS1',
-      name: 'Suhartini',
+      name: 'Susanto',
       instansi: this.getInstansi(),
       jabatan: JabatanInstansi.DIRUT,
       phoneNumber: '0873-3242-3233',
       location: {
-        address: 'Jl. Kornea Rt 01/02 No. 11',
+        address: 'Jl. Ahmad Yani Rt 01/02 No. 11',
         city: 'Jakarta Utara',
         province: 'DKI Jakarta',
         country: 'Indonesia'
@@ -93,6 +93,20 @@ export class DataCabangPadang extends DataInstansi<Cabang> {
           province: 'DKI Jakarta',
           country: 'Indonesia'
         }
+      },
+      {
+        nik: 'MPS2',
+        name: 'Nani Jatmoko',
+        jabatan: JabatanInstansi.MANAGER,
+        wakilKepala: this.getWakilKepalaInstansi(),
+        instansi: this.getInstansi(),
+        phoneNumber: '0873-2345-3233',
+        location: {
+          address: 'Jl. Kornea Rt 01/02 No. 3A',
+          city: 'Jakarta Utara',
+          province: 'DKI Jakarta',
+          country: 'Indonesia'
+        }
       }
     ]
   }
@@ -119,6 +133,63 @@ export class DataCabangPadang extends DataInstansi<Cabang> {
         jabatan: JabatanInstansi.STAFF,
         instansi: this.getInstansi(),
         manager: this.getListManager()[0],
+        phoneNumber: '0873-2345-3322',
+        location: {
+          address: 'Jl. Kornea Rt 01/02 No. 5A',
+          city: 'Jakarta Utara',
+          province: 'DKI Jakarta',
+          country: 'Indonesia'
+        }
+      },
+
+      {
+        nik: 'SPS3',
+        name: 'Septian',
+        jabatan: JabatanInstansi.STAFF,
+        manager: this.getListManager()[1],
+        instansi: this.getInstansi(),
+        phoneNumber: '0873-4563-3233',
+        location: {
+          address: 'Jl. Kornea Rt 01/02 No. 4A',
+          city: 'Jakarta Utara',
+          province: 'DKI Jakarta',
+          country: 'Indonesia'
+        }
+      },
+      {
+        nik: 'SPS4',
+        name: 'Hartono',
+        jabatan: JabatanInstansi.STAFF,
+        instansi: this.getInstansi(),
+        manager: this.getListManager()[1],
+        phoneNumber: '0873-2345-3322',
+        location: {
+          address: 'Jl. Kornea Rt 01/02 No. 5A',
+          city: 'Jakarta Utara',
+          province: 'DKI Jakarta',
+          country: 'Indonesia'
+        }
+      },
+      {
+        nik: 'SPS5',
+        name: 'Erlang',
+        jabatan: JabatanInstansi.STAFF,
+        manager: this.getListManager()[1],
+        instansi: this.getInstansi(),
+        phoneNumber: '0873-4563-3233',
+        location: {
+          address: 'Jl. Kornea Rt 01/02 No. 4A',
+          city: 'Jakarta Utara',
+          province: 'DKI Jakarta',
+          country: 'Indonesia'
+        }
+      },
+      {
+        nik: 'SPS6',
+        name: 'Sakti Satria',
+        jabatan: JabatanInstansi.STAFF,
+        instansi: this.getInstansi(),
+        manager: this.getListManager()[1],
         phoneNumber: '0873-2345-3322',
         location: {
           address: 'Jl. Kornea Rt 01/02 No. 5A',

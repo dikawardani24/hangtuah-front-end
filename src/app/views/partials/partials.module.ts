@@ -86,13 +86,20 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatDialogModule } from '@angular/material/dialog';
-import { WidgetCabangComponent } from './content/my-page/widget-cabang/widget-cabang.component';
-import { WidgetPengurusComponent } from './content/my-page/widget-pengurus/widget-pengurus.component';
-import { WidgetSchoolComponent } from './content/my-page/widget-school/widget-school.component';
+import { WidgetCabangComponent } from './content/cabang/widget-cabang/widget-cabang.component';
+import { WidgetPengurusComponent } from './content/cabang/widget-pengurus/widget-pengurus.component';
+import { WidgetSchoolComponent } from './content/cabang/widget-school/widget-school.component';
 import { MatTreeModule } from '@angular/material/tree';
 import { SchoolItemModule } from './content/schooll-list/school-item/school-item.module';
 import { DialogDetailComponent } from './content/schooll-list/dialog-detail/dialog-detail.component';
 import { InfoComponent } from './content/pusat/info/info.component';
+import { WidgetDetailCabangComponent } from './content/cabang/widget-detail-cabang/widget-detail-cabang.component';
+import { WidgetStructureCabangComponent } from './content/cabang/widget-structure-cabang/widget-structure-cabang.component';
+import { NgxOrgChartModule } from 'ngx-org-chart';
+import { OrgChartModule } from '@mondal/org-chart';
+import {
+  WidgetDetailEmployeeCabangComponent
+} from './content/cabang/widget-detail-employee-cabang/widget-detail-employee-cabang.component';
 
 @NgModule({
   declarations: [
@@ -147,6 +154,9 @@ import { InfoComponent } from './content/pusat/info/info.component';
     WidgetPengurusComponent,
     DialogDetailComponent,
     InfoComponent,
+    WidgetDetailCabangComponent,
+    WidgetStructureCabangComponent,
+    WidgetDetailEmployeeCabangComponent
   ],
   exports: [
     WidgetModule,
@@ -202,6 +212,7 @@ import { InfoComponent } from './content/pusat/info/info.component';
     WidgetSchoolComponent,
     WidgetCabangComponent,
     WidgetPengurusComponent,
+    WidgetDetailCabangComponent
   ],
   imports: [
     CommonModule,
@@ -236,6 +247,8 @@ import { InfoComponent } from './content/pusat/info/info.component';
     MatTooltipModule,
     MatDialogModule,
     MatTreeModule,
+    NgxOrgChartModule,
+    OrgChartModule,
 
     // ng-bootstrap modules
     NgbDropdownModule,
@@ -243,7 +256,10 @@ import { InfoComponent } from './content/pusat/info/info.component';
     NgbTooltipModule,
   ],
   entryComponents: [
-    DialogDetailComponent
+    DialogDetailComponent,
+    WidgetDetailCabangComponent,
+    WidgetStructureCabangComponent,
+    WidgetDetailEmployeeCabangComponent
   ]
 })
 export class PartialsModule {

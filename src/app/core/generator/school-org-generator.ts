@@ -33,7 +33,9 @@ export class SchoolOrganization extends Organization<SchoolData> {
       staffTuNodes.push({
         nik: staff.nik,
         name: staff.name,
-        jabatan: staff.jabatan
+        designation: staff.jabatan,
+        imageUrl: 'assets/media/svg/avatars/009-boy-4.svg',
+        cssClass: ''
       })
     });
 
@@ -41,8 +43,10 @@ export class SchoolOrganization extends Organization<SchoolData> {
     this.generator.getListWalikelas().forEach(waliKelas => {
       waliKelasNodes.push({
         nik: waliKelas.nik,
-        jabatan: `${waliKelas.jabatan} ${waliKelas.kelas.name}`,
-        name: waliKelas.name
+        designation: `${waliKelas.jabatan} ${waliKelas.kelas.name}`,
+        name: waliKelas.name,
+        imageUrl: 'assets/media/svg/avatars/009-boy-4.svg',
+        cssClass: ''
       })
     });
 
@@ -51,49 +55,36 @@ export class SchoolOrganization extends Organization<SchoolData> {
       guruNodes.push({
         nik: guru.nik,
         name: guru.name,
-        jabatan: `${guru.jabatan} ${guru.listMataPelajaran.join(', ')}`,
+        designation: `${guru.jabatan} ${guru.listMataPelajaran.join(', ')}`,
+        imageUrl: 'assets/media/svg/avatars/009-boy-4.svg',
+        cssClass: ''
       })
     })
 
     return {
       nik: kepsekNode.nik,
       name: kepsekNode.name,
-      jabatan: kepsekNode.jabatan,
-      children: [
+      designation: kepsekNode.jabatan,
+      imageUrl: 'assets/media/svg/avatars/009-boy-4.svg',
+      cssClass: '',
+      subordinates: [
         {
-          title: 'Wakil Kepala Sekolah',
-          children: [
-            {
-              nik: wakilKepsekNode.nik,
-              name: wakilKepsekNode.name,
-              jabatan: wakilKepsekNode.jabatan
-            }
-          ]
+          nik: wakilKepsekNode.nik,
+          name: wakilKepsekNode.name,
+          designation: wakilKepsekNode.jabatan,
+          imageUrl: 'assets/media/svg/avatars/009-boy-4.svg',
+          cssClass: ''
         },
         {
-          title: 'Tata Usaha',
-          children: [
-            {
-              nik: kepalaTuNode.nik,
-              name: kepalaTuNode.name,
-              jabatan: kepalaTuNode.jabatan,
-              children: [
-                {
-                  title: 'Staff Tata Usaha',
-                  children: staffTuNodes
-                }
-              ]
-            }
-          ]
+          nik: kepalaTuNode.nik,
+          name: kepalaTuNode.name,
+          designation: kepalaTuNode.jabatan,
+          subordinates: staffTuNodes,
+          imageUrl: 'assets/media/svg/avatars/009-boy-4.svg',
+          cssClass: ''
         },
-        {
-          title: 'Wali Kelas',
-          children: waliKelasNodes
-        },
-        {
-          title: 'Guru',
-          children: guruNodes
-        }
+        ...waliKelasNodes,
+        ...guruNodes
       ]
     }
   }

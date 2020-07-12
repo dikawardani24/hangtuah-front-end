@@ -34,7 +34,9 @@ export class HangtuahOrganization<T extends Instansi> extends Organization<Hangt
         staffNodes.push({
           nik: staff.nik,
           name: staff.name,
-          jabatan: staff.jabatan
+          designation: staff.jabatan,
+          imageUrl: 'assets/media/svg/avatars/009-boy-4.svg',
+          cssClass: 'mui-oc-man'
         })
       }
     })
@@ -51,36 +53,28 @@ export class HangtuahOrganization<T extends Instansi> extends Organization<Hangt
       managerNodes.push({
         nik: manager.nik,
         name: manager.name,
-        jabatan: manager.jabatan,
-        children: [
-          {
-            title: 'Staff',
-            children: this._getStaffFor(manager)
-          }
-        ]
+        designation: manager.jabatan,
+        subordinates: this._getStaffFor(manager),
+        imageUrl: 'assets/media/svg/avatars/009-boy-4.svg',
+        cssClass: 'mui-oc-dir '
+
       })
     });
 
     return {
       nik: kepalaInstansi.nik,
       name: kepalaInstansi.name,
-      jabatan: kepalaInstansi.jabatan,
-      children: [
+      designation: kepalaInstansi.jabatan,
+      imageUrl: 'assets/media/svg/avatars/009-boy-4.svg',
+      cssClass: 'mui-oc-ceo',
+      subordinates: [
         {
-          title: 'Wakil Kepala Instansi',
-          children: [
-            {
-              nik: wakKepInstansi.nik,
-              name: wakKepInstansi.name,
-              jabatan: wakKepInstansi.jabatan,
-              children: [
-                {
-                  title: 'Manager',
-                  children: managerNodes
-                }
-              ]
-            }
-          ]
+          nik: wakKepInstansi.nik,
+          name: wakKepInstansi.name,
+          designation: wakKepInstansi.jabatan,
+          subordinates: managerNodes,
+          imageUrl: 'assets/media/svg/avatars/009-boy-4.svg',
+          cssClass: 'mui-oc-vp'
         }
       ]
     }

@@ -1,5 +1,5 @@
 import { HangtuahData, TotalType } from '../hangtuah-org-generator';
-import { KepalaInstansi, WakilKepalaInstansi, Instansi, Manager, Staff } from '../../_base/crud/models/hangtuah-organization';
+import { KepalaInstansi, WakilKepalaInstansi, Instansi, Manager, Staff, Pengurus } from '../../_base/crud/models/hangtuah-organization';
 import { Sekolah, SchoolType } from '../../_base/crud/models/school-organization';
 import { SchoolData } from '../school-org-generator';
 
@@ -9,6 +9,23 @@ export interface AddListener {
 
 export abstract class DataInstansi<T extends Instansi> implements HangtuahData<T> {
 
+  public searchByNik(nik: string): Pengurus {
+    const listPengurus: Pengurus[] = []
+
+    listPengurus.push(this.getKepalaInstansi())
+    listPengurus.push(this.getWakilKepalaInstansi())
+    this.getListManager().forEach(manager => listPengurus.push(manager))
+    this.getListStaff().forEach(staff => listPengurus.push(staff))
+
+    let found: Pengurus = null
+    listPengurus.forEach(pengurus => {
+      if (pengurus.nik === nik) {
+        found = pengurus
+      }
+    })
+
+    return found
+  }
 
   private _countTotalOf(type: SchoolType) {
     let total = 0;
