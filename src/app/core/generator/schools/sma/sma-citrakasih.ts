@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core'
-import { SchoolData } from '../../school-org-generator'
 import {
   KepalaSekolah,
   WaliKelas,
@@ -16,7 +15,7 @@ import { DataSMA } from './sma'
 
 
 @Injectable()
-export class DataSMACitraKasih extends DataSMA implements SchoolData {
+export class DataSMACitraKasih extends DataSMA {
 
   getKepalaTataUsaha(): KepalaTataUsaha {
     return {

@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 // Components
 import { BaseComponent } from './views/theme/base/base.component';
+
 // Auth
 import { AuthGuard } from './core/auth';
 
@@ -26,10 +27,6 @@ const routes: Routes = [
       {
         path: 'perwakilan',
         loadChildren: () => import('./views/pages/perwakilan/perwakilan.module').then(m => m.PerwakilanPageModule),
-      },
-      {
-        path: 'schools',
-        loadChildren: () => import('./views/pages/school-list/school-list.module').then(m => m.SchoolListPageModule),
       },
       {
         path: 'dashboard',

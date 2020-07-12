@@ -102,6 +102,10 @@ import { WidgetPengurusComponent } from './content/cabang/widget-pengurus/widget
 import { WidgetCabangComponent } from './content/cabang/widget-cabang/widget-cabang.component';
 import { WidgetSchoolComponent } from './content/cabang/widget-school/widget-school.component';
 import { WidgetListSchollCabangComponent } from './content/cabang/widget-list-scholl-cabang/widget-list-scholl-cabang.component';
+import { WidgetItemSchollCabangComponent } from './content/cabang/widget-item-scholl-cabang/widget-item-scholl-cabang.component';
+import { WidgetStructureSchollComponent } from './content/cabang/widget-structure-scholl/widget-structure-scholl.component';
+import { CdkScrollableModule } from '@angular/cdk/scrolling';
+import { WidgetDetailSchollComponent } from './content/cabang/widget-detail-scholl/widget-detail-scholl.component';
 
 @NgModule({
   declarations: [
@@ -160,6 +164,9 @@ import { WidgetListSchollCabangComponent } from './content/cabang/widget-list-sc
     WidgetCabangComponent,
     WidgetSchoolComponent,
     WidgetListSchollCabangComponent,
+    WidgetItemSchollCabangComponent,
+    WidgetStructureSchollComponent,
+    WidgetDetailSchollComponent,
   ],
   exports: [
     WidgetModule,
@@ -259,6 +266,7 @@ import { WidgetListSchollCabangComponent } from './content/cabang/widget-list-sc
     NgxOrgChartModule,
     OrgChartModule,
     NgbModule,
+    CdkScrollableModule,
 
     // ng-bootstrap modules
     NgbDropdownModule,
@@ -275,7 +283,10 @@ import { WidgetListSchollCabangComponent } from './content/cabang/widget-list-sc
     WidgetPengurusComponent,
     WidgetCabangComponent,
     WidgetSchoolComponent,
-    WidgetListSchollCabangComponent
+    WidgetListSchollCabangComponent,
+    WidgetItemSchollCabangComponent,
+    WidgetStructureSchollComponent,
+    WidgetDetailSchollComponent
   ]
 })
 export class PartialsModule {

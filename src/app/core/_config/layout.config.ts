@@ -96,7 +96,7 @@ export class LayoutConfig {
         },
         mobile: {
           submenu: {
-            theme: 'dark',  // light/dark
+            theme: 'light',  // light/dark
             accordion: true,
           },
         },
@@ -117,12 +117,12 @@ export class LayoutConfig {
     },
     brand: {
       self: {
-        theme: 'dark', // light/dark
+        theme: 'light', // light/dark
       },
     },
     aside: {
       self: {
-        theme: 'dark', // light/dark
+        theme: 'light', // light/dark
         display: true,
         fixed: true,
         minimize: {
@@ -165,7 +165,7 @@ export class LayoutConfig {
         display: true,
         layout: 'dropdown', // offcanvas, dropdown
         dropdown: {
-          style: 'dark' // light|dark
+          style: 'light' // light|dark
         },
         offcanvas: {
           direction: 'right'
@@ -175,7 +175,7 @@ export class LayoutConfig {
         display: true,
         layout: 'offcanvas', // offcanvas, dropdown
         dropdown: {
-          style: 'dark', // light|dark
+          style: 'light', // light|dark
         },
         offcanvas: {
           direction: 'right'
@@ -187,14 +187,14 @@ export class LayoutConfig {
       cart: {
         display: true,
         dropdown: {
-          style: 'dark'
+          style: 'light'
         }
       },
       'quick-actions': {
         display: true,
         layout: 'dropdown', // offcanvas, dropdown
         dropdown: {
-          style: 'dark'
+          style: 'light'
         },
         offcanvas: {
           direction: 'right'

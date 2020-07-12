@@ -15,7 +15,7 @@ import {
 import { DataSMA } from './sma'
 
 @Injectable()
-export class DataSMAHercules extends DataSMA implements SchoolData {
+export class DataSMAHercules extends DataSMA {
   getKepalaTataUsaha(): KepalaTataUsaha {
     return {
       nik: 'KPTU1234',

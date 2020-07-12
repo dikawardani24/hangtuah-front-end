@@ -26,7 +26,8 @@ export class WidgetListSchollCabangComponent implements OnInit {
   close() {
     this.dialogRef.close()
   }
-  viewDetailSekolah(selected: Sekolah) {
+
+  viewDetailSekolah(selected: SchoolData) {
     console.log(selected);
   }
 

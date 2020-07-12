@@ -1,0 +1,48 @@
+<div class="card my-card-custom">
+  <div class="card-header" style="padding: 10px !important; height: 70px !important;">
+    <div class="d-flex align-items-center mb-10">
+      <!--begin::Symbol-->
+      <div class="symbol symbol-40 symbol-light-success mr-5">
+        <span class="symbol-label">
+          <img alt="boy avatar" src="./assets/media/logos/logo-letter-3.png" class="h-75 align-self-end" />
+        </span>
+      </div>
+      <!--end::Symbol-->
+
+      <!--begin::Text-->
+      <div class="d-flex flex-column flex-grow-1 font-weight-bold">
+        <label class="text-truncate text-dark text-hover-primary mb-1 font-size-lg" data-toggle="tooltip" title="Tampilkan Data {{item.getSekolah().name}}">{{item.getSekolah().name}}</label>
+        <span class="text-muted">{{item.getSekolah().type}}</span>
+      </div>
+      <!--end::Text-->
+
+      <div class="font-weight-bold col text-right" >
+        <div ngbDropdown placement="bottom-right" class="d-inline-block">
+          <a href="javascript:void(0)" id="dropdownBasic1" placement="top-right" ngbDropdownToggle class="text-dark text-hover-primary mb-1 font-size-lg" data-toggle="tooltip" title="Tampilkan Struktur Organisasi">
+            <i class="ki ki-more-ver"></i>
+          </a>
+          <div ngbDropdownMenu>
+            <button ngbDropdownItem (click)="viewStructureSekolah()">Struktur Organisasi
+            </button>
+            <button ngbDropdownItem (click)="viewDetailSekolah()">
+              Informasi Sekolah
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+  <div class="card-body" style="padding: 20px !important;">
+    <div>
+      <label>Kelapa Sekolah</label>
+      <input type="text" value="{{item.getKepalaSekolah().name}}" class="form-control" disabled>
+    </div>
+    <div>
+      <label>No. Telepon</label>
+      <input type="text" value="{{item.getSekolah().phoneNumber}}" class="form-control" disabled>
+    </div>
+  </div>
+</div>

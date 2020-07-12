@@ -29,7 +29,7 @@ export class MenuConfig {
           translate: 'MENU.DASHBOARD',
           bullet: 'dot',
         },
-        {section: 'Struktur Organisai'},
+        {section: 'Struktur Organisai Hangtuah'},
         {
           title: 'Pusat',
           root: true,

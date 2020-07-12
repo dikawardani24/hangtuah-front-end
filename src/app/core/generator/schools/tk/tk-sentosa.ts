@@ -16,7 +16,7 @@ import { DataTK } from './tk'
 
 
 @Injectable()
-export class DataTkSentosa extends DataTK implements SchoolData {
+export class DataTkSentosa extends DataTK {
 
   getKepalaTataUsaha(): KepalaTataUsaha {
     return {

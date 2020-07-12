@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core'
-import { SchoolData } from '../../school-org-generator'
 import {
   KepalaSekolah,
   WaliKelas,
@@ -15,7 +14,7 @@ import {
 import { DataSD } from './sd'
 
 @Injectable()
-export class DataSDMarsudi extends DataSD implements SchoolData {
+export class DataSDMarsudi extends DataSD {
   getKepalaTataUsaha(): KepalaTataUsaha {
     return {
       nik: 'KPTU1234',
