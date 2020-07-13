@@ -32,7 +32,7 @@ export class DataCabangTjPinang extends DataInstansi<Cabang> {
   getInstansi(): Cabang {
     return {
       id: 1,
-      name: 'Cabang Tanjung Pinang',
+      name: 'Cabang Tanjung Pinang 2',
       type: InstansiType.CABANG,
       pusat: this.dataPusat.getInstansi(),
       listSekolah: this.getListSekolah(),

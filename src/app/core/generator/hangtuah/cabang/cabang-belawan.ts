@@ -87,32 +87,6 @@ export class DataCabangBelawan extends DataInstansi<Cabang> {
   getListManager(): Manager[] {
     return [
       {
-<<<<<<< HEAD
-        nik: 'MKC11',
-        name: 'Isna Malinda',
-        jabatan: JabatanInstansi.MANAGER,
-        wakilKepala: this.getWakilKepalaInstansi(),
-        instansi: this.getInstansi(),
-        phoneNumber: '0812-0000-6666',
-        location: {
-          address: 'Jl. Deli I Rt 10/02 No. 11',
-          city: 'Medan',
-          province: 'Sumatera Utara',
-          country: 'Indonesia'
-        }
-      },
-      {
-        nik: 'MKC12',
-        name: 'Tikawe',
-        jabatan: JabatanInstansi.MANAGER,
-        wakilKepala: this.getWakilKepalaInstansi(),
-        instansi: this.getInstansi(),
-        phoneNumber: '0878-8899-0890',
-        location: {
-          address: 'Jl. Inderagiri Rt 11/03 No. 11',
-          city: 'Medan',
-          province: 'Sumatera Utara',
-=======
         nik: 'MPS1',
         name: 'Herman Jatmoko',
         jabatan: JabatanInstansi.MANAGER,
@@ -123,7 +97,6 @@ export class DataCabangBelawan extends DataInstansi<Cabang> {
           address: 'Jl. Kornea Rt 01/02 No. 3A',
           city: 'Jakarta Utara',
           province: 'DKI Jakarta',
->>>>>>> 0545dd713cc8117d0463acbca4bca3c3c2b277a9
           country: 'Indonesia'
         }
       }
@@ -133,18 +106,6 @@ export class DataCabangBelawan extends DataInstansi<Cabang> {
   getListStaff(): Staff[] {
     return [
       {
-<<<<<<< HEAD
-        nik: 'SKC11',
-        name: 'Pupun Nasiha',
-        jabatan: JabatanInstansi.STAFF,
-        manager: this.getListManager()[0],
-        instansi: this.getInstansi(),
-        phoneNumber: '0878-5432-1000',
-        location: {
-          address: 'Jl. Serdang Rt 01/02 No. 12',
-          city: 'Medan',
-          province: 'Sumatera Utara',
-=======
         nik: 'SPS1',
         name: 'Jumadi Akhir',
         jabatan: JabatanInstansi.STAFF,
@@ -155,54 +116,10 @@ export class DataCabangBelawan extends DataInstansi<Cabang> {
           address: 'Jl. Kornea Rt 01/02 No. 4A',
           city: 'Jakarta Utara',
           province: 'DKI Jakarta',
->>>>>>> 0545dd713cc8117d0463acbca4bca3c3c2b277a9
           country: 'Indonesia'
         }
       },
       {
-<<<<<<< HEAD
-        nik: 'SKC12',
-        name: 'Zulfa Indraguna',
-        jabatan: JabatanInstansi.STAFF,
-        instansi: this.getInstansi(),
-        manager: this.getListManager()[0],
-        phoneNumber: '0878-0022-3210',
-        location: {
-          address: 'Jl. Kampar Rt 01/02 No. 5',
-          city: 'Medan',
-          province: 'Sumatera Utara',
-          country: 'Indonesia'
-        }
-      },
-      {
-        nik: 'SKC13',
-        name: 'Rizal Bintoro',
-        jabatan: JabatanInstansi.STAFF,
-        instansi: this.getInstansi(),
-        manager: this.getListManager()[1],
-        phoneNumber: '0896-5552-0001',
-        location: {
-          address: 'Jl. Bliton Rt 03/02 No. 01',
-          city: 'Medan',
-          province: 'Sumatera Utara',
-          country: 'Indonesia'
-        }
-      },
-      {
-        nik: 'SKC14',
-        name: 'Yan Charles',
-        jabatan: JabatanInstansi.STAFF,
-        instansi: this.getInstansi(),
-        manager: this.getListManager()[1],
-        phoneNumber: '0878-8810-2002',
-        location: {
-          address: 'Jl. Sabang Rt 05/02 No. 15',
-          city: 'Medan',
-          province: 'Sumatera Utara',
-          country: 'Indonesia'
-        }
-      }
-=======
         nik: 'SPS2',
         name: 'Johny Utama',
         jabatan: JabatanInstansi.STAFF,
@@ -216,7 +133,6 @@ export class DataCabangBelawan extends DataInstansi<Cabang> {
           country: 'Indonesia'
         }
       },
->>>>>>> 0545dd713cc8117d0463acbca4bca3c3c2b277a9
     ]
   }
 

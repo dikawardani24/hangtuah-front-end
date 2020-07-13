@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-import { HangtuahOrganization } from '../../hangtuah-org-generator';
-import { Cabang, KepalaInstansi, WakilKepalaInstansi, InstansiType, JabatanInstansi, Manager, Staff } from 'src/app/core/_base/crud/models/hangtuah-organization';
-=======
 import {
   Cabang,
   KepalaInstansi,
@@ -11,24 +7,10 @@ import {
   Manager,
   Staff
 } from '../../../_base/crud/models/hangtuah-organization';
->>>>>>> 0545dd713cc8117d0463acbca4bca3c3c2b277a9
 import { Injectable } from '@angular/core';
 import { DataPusat } from '../pusat';
 import { DataSDMarsudi } from '../../schools/sd/sd-marsudi';
 import { DataSMPKurnia } from '../../schools/smp/smp-kurnia';
-<<<<<<< HEAD
-import { SmaCitraKasihData } from '../../schools/sma/sma-citrakasih';
-import { DataSMKBerkarya } from '../../schools/smk/smk-berkarya';
-import { DataSMKCitraBangsa } from '../../schools/smk/smk-citrabangsa';
-import { DataSDTarakinata } from '../../schools/sd/sd-tarakinata';
-import { DataSMPNugraha } from '../../schools/smp/smp-nugraha';
-import { DataInstansi } from '../data-hangtuah';
-import { extend } from 'lodash';
-import { SchoolData } from '../../school-org-generator';
-
-@Injectable()
-export class CabangSurabaya extends DataInstansi<Cabang> {
-=======
 import { DataSDTarakinata } from '../../schools/sd/sd-tarakinata';
 import { DataSMPNugraha } from '../../schools/smp/smp-nugraha';
 import { DataInstansi } from '../data-hangtuah';
@@ -36,42 +18,26 @@ import { SchoolData } from '../../school-org-generator';
 
 @Injectable()
 export class DataCabangSurabaya extends DataInstansi<Cabang> {
->>>>>>> 0545dd713cc8117d0463acbca4bca3c3c2b277a9
 
   constructor(
     private dataPusat: DataPusat,
     private dataSdMarsudi: DataSDMarsudi,
     private dataSdTaraKinata: DataSDTarakinata,
     private dataSmpKurnia: DataSMPKurnia,
-<<<<<<< HEAD
-    private dataSmpNugraha: DataSMPNugraha,
-    private dataSmaCitraKasih: SmaCitraKasihData,
-    private dataSmkBerkarya: DataSMKBerkarya,
-    private dataSmkCitraBangsa: DataSMKCitraBangsa
-=======
     private dataSmpNugraha: DataSMPNugraha
->>>>>>> 0545dd713cc8117d0463acbca4bca3c3c2b277a9
   ) {
     super()
   }
 
   getInstansi(): Cabang {
     return {
-<<<<<<< HEAD
-      id: 16,
-=======
       id: 1,
->>>>>>> 0545dd713cc8117d0463acbca4bca3c3c2b277a9
       name: 'Cabang Surabaya',
       type: InstansiType.CABANG,
       pusat: this.dataPusat.getInstansi(),
       listSekolah: this.getListSekolah(),
       location: {
-<<<<<<< HEAD
-        address: 'Jl. Raya Menganti Rt 06/02 No. 10',
-=======
         address: 'Jl. Kornea Rt 01/02 No. 10',
->>>>>>> 0545dd713cc8117d0463acbca4bca3c3c2b277a9
         city: 'Surabaya',
         province: 'Jawa Timur',
         country: 'Indonesia'
@@ -81,17 +47,6 @@ export class DataCabangSurabaya extends DataInstansi<Cabang> {
 
   getKepalaInstansi(): KepalaInstansi {
     return {
-<<<<<<< HEAD
-      nik: 'KPC16',
-      name: 'Yola Ismail',
-      instansi: this.getInstansi(),
-      jabatan: JabatanInstansi.DIRUT,
-      phoneNumber: '0873-3242-4000',
-      location: {
-        address: 'Jl. Dr. Sutomo Rt 01/02 No. 11',
-        city: 'Surabaya',
-        province: 'Jawa Timur',
-=======
       nik: 'KPS1',
       name: 'Ahmad Dhani',
       instansi: this.getInstansi(),
@@ -101,7 +56,6 @@ export class DataCabangSurabaya extends DataInstansi<Cabang> {
         address: 'Jl. Ahmad Yani Rt 01/02 No. 11',
         city: 'Bogor',
         province: 'Jawa Barat',
->>>>>>> 0545dd713cc8117d0463acbca4bca3c3c2b277a9
         country: 'Indonesia'
       }
     }
@@ -109,18 +63,6 @@ export class DataCabangSurabaya extends DataInstansi<Cabang> {
 
   getWakilKepalaInstansi(): WakilKepalaInstansi {
     return {
-<<<<<<< HEAD
-      nik: 'WKPC16',
-      name: 'Adelia Sumantrie',
-      instansi: this.getInstansi(),
-      jabatan: JabatanInstansi.WA_DIRUT,
-      kepala: this.getKepalaInstansi(),
-      phoneNumber: '0873-2345-0034',
-      location: {
-        address: 'Jl. Surabaya Rt 014/02 No. 10',
-        city: 'Surabaya',
-        province: 'Jawa Timur',
-=======
       nik: 'WKPS1',
       name: 'Marufat Khairudin',
       instansi: this.getInstansi(),
@@ -131,7 +73,6 @@ export class DataCabangSurabaya extends DataInstansi<Cabang> {
         address: 'Jl. Kornea Rt 01/02 No. 2A',
         city: 'Jakarta Utara',
         province: 'DKI Jakarta',
->>>>>>> 0545dd713cc8117d0463acbca4bca3c3c2b277a9
         country: 'Indonesia'
       }
     }
@@ -139,9 +80,6 @@ export class DataCabangSurabaya extends DataInstansi<Cabang> {
 
   getListManager(): Manager[] {
     return [
-<<<<<<< HEAD
-
-=======
       {
         nik: 'MPS1',
         name: 'Herman Jatmoko',
@@ -170,15 +108,11 @@ export class DataCabangSurabaya extends DataInstansi<Cabang> {
           country: 'Indonesia'
         }
       }
->>>>>>> 0545dd713cc8117d0463acbca4bca3c3c2b277a9
     ]
   }
 
   getListStaff(): Staff[] {
     return [
-<<<<<<< HEAD
-
-=======
       {
         nik: 'SPS1',
         name: 'Jumadi Akhir',
@@ -264,7 +198,6 @@ export class DataCabangSurabaya extends DataInstansi<Cabang> {
           country: 'Indonesia'
         }
       },
->>>>>>> 0545dd713cc8117d0463acbca4bca3c3c2b277a9
     ]
   }
 
@@ -274,12 +207,6 @@ export class DataCabangSurabaya extends DataInstansi<Cabang> {
       this.dataSdTaraKinata,
       this.dataSmpKurnia,
       this.dataSmpNugraha,
-<<<<<<< HEAD
-      this.dataSmaCitraKasih,
-      this.dataSmkBerkarya,
-      this.dataSmkCitraBangsa
-=======
->>>>>>> 0545dd713cc8117d0463acbca4bca3c3c2b277a9
     ]
   }
 
