@@ -4,6 +4,7 @@ import { Perwakilan } from 'src/app/core/_base/crud/models/hangtuah-organization
 import { DataPoolPerwakilan } from 'src/app/core/generator/data-pool/perwakilan-data-pool';
 import { TotalType } from 'src/app/core/generator/hangtuah-org-generator';
 import { SchoolType } from 'src/app/core/_base/crud/models/school-organization';
+import { ColorUtil, SchoolTypeColor } from '../../../core/utils/color-helpers';
 
 @Component({
   selector: 'kt-perwakilan',
@@ -18,6 +19,10 @@ export class PerwakilanComponent implements OnInit {
   constructor(
     private perwakilanDataPool: DataPoolPerwakilan
   ) { }
+
+  getColor(type: SchoolType): SchoolTypeColor {
+    return ColorUtil.getColor(type)
+  }
 
   private collectDataSummary() {
     let totalTk = 0

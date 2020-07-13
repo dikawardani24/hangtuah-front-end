@@ -4,6 +4,7 @@ import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { WidgetListSchollCabangComponent, DataFilter } from '../widget-list-scholl-cabang/widget-list-scholl-cabang.component';
 import { DataInstansi } from 'src/app/core/generator/hangtuah/data-hangtuah';
 import { Instansi } from 'src/app/core/_base/crud/models/hangtuah-organization';
+import { ColorUtil, SchoolTypeColor } from 'src/app/core/utils/color-helpers';
 
 @Component({
   selector: 'kt-widget-school',
@@ -19,6 +20,10 @@ export class WidgetSchoolComponent {
 
   constructor(public dialog: MatDialog) {
 
+  }
+
+  getColor(type: SchoolType): SchoolTypeColor {
+    return ColorUtil.getColor(type)
   }
 
   viewListSekolah() {

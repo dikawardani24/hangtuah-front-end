@@ -3,6 +3,8 @@ import { SchoolData } from 'src/app/core/generator/school-org-generator';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { WidgetStructureSchollComponent } from '../widget-structure-scholl/widget-structure-scholl.component';
 import { WidgetDetailSchollComponent } from '../widget-detail-scholl/widget-detail-scholl.component';
+import { SchoolType } from 'src/app/core/_base/crud/models/school-organization';
+import { SchoolTypeColor, ColorUtil } from 'src/app/core/utils/color-helpers';
 
 @Component({
   selector: 'kt-widget-item-scholl-cabang',
@@ -16,6 +18,10 @@ export class WidgetItemSchollCabangComponent implements OnInit {
   constructor(
      private dialog: MatDialog
   ) { }
+
+  getColor(type: SchoolType): SchoolTypeColor {
+    return ColorUtil.getColor(type)
+  }
 
   viewDetailSekolah() {
     const config: MatDialogConfig = {

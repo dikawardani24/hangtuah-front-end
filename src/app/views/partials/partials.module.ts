@@ -42,22 +42,6 @@ import {
   UserProfileComponent,
   UserProfile4Component
 } from './layout';
-import {
-  Widget1SalesStatComponent,
-  Widget9RecentActivitiesComponent,
-  Widget12NewUsersComponent,
-  Widget7WeeklySalesComponent,
-  Widget1TasksOverviewComponent,
-  Widget2NewArrivalsComponent,
-  Widget3NewArrivalsAuthorsComponent,
-  Widget4TodoComponent,
-  Widget8TrendsComponent,
-  Dropdown1Component,
-  Dropdown2Component,
-  Dropdown3Component,
-  Dropdown4Component,
-  Dropdown5Component
-} from './content/dashboard-widgets';
 // General
 import { NoticeComponent } from './content/general/notice/notice.component';
 import { PortletModule } from './content/general/portlet/portlet.module';
@@ -106,7 +90,10 @@ import { WidgetItemSchollCabangComponent } from './content/cabang/widget-item-sc
 import { WidgetStructureSchollComponent } from './content/cabang/widget-structure-scholl/widget-structure-scholl.component';
 import { CdkScrollableModule } from '@angular/cdk/scrolling';
 import { WidgetDetailSchollComponent } from './content/cabang/widget-detail-scholl/widget-detail-scholl.component';
-
+import { WidgetSummarySchoolComponent } from './content/cabang/widget-summary-school/widget-summary-school.component';
+import { WidgetItemTotalKaryawanComponent } from './content/dashboard-widgets/widget-item-total-karyawan/widget-item-total-karyawan.component';
+import { WidgetSummarySchoolDashComponent } from './content/dashboard-widgets/widget-summary-school-dash/widget-summary-school-dash.component';
+import { WidgetSummaryInstansiSchoolComponent } from './content/dashboard-widgets/widget-summary-instansi-school/widget-summary-instansi-school.component';
 @NgModule({
   declarations: [
     ScrollTopComponent,
@@ -140,20 +127,6 @@ import { WidgetDetailSchollComponent } from './content/cabang/widget-detail-scho
     UserProfile3Component,
     UserProfile4Component,
     CartComponent,
-    Widget1SalesStatComponent,
-    Widget9RecentActivitiesComponent,
-    Widget12NewUsersComponent,
-    Widget7WeeklySalesComponent,
-    Widget1TasksOverviewComponent,
-    Widget2NewArrivalsComponent,
-    Widget3NewArrivalsAuthorsComponent,
-    Widget4TodoComponent,
-    Widget8TrendsComponent,
-    Dropdown1Component,
-    Dropdown2Component,
-    Dropdown3Component,
-    Dropdown4Component,
-    Dropdown5Component,
 
     DialogDetailComponent,
     InfoComponent,
@@ -167,6 +140,10 @@ import { WidgetDetailSchollComponent } from './content/cabang/widget-detail-scho
     WidgetItemSchollCabangComponent,
     WidgetStructureSchollComponent,
     WidgetDetailSchollComponent,
+    WidgetSummarySchoolComponent,
+    WidgetItemTotalKaryawanComponent,
+    WidgetSummarySchoolDashComponent,
+    WidgetSummaryInstansiSchoolComponent
   ],
   exports: [
     WidgetModule,
@@ -204,20 +181,6 @@ import { WidgetDetailSchollComponent } from './content/cabang/widget-detail-scho
     UserProfile3Component,
     UserProfile4Component,
     CartComponent,
-    Widget1SalesStatComponent,
-    Widget9RecentActivitiesComponent,
-    Widget12NewUsersComponent,
-    Widget7WeeklySalesComponent,
-    Widget1TasksOverviewComponent,
-    Widget2NewArrivalsComponent,
-    Widget3NewArrivalsAuthorsComponent,
-    Widget4TodoComponent,
-    Widget8TrendsComponent,
-    Dropdown1Component,
-    Dropdown2Component,
-    Dropdown3Component,
-    Dropdown4Component,
-    Dropdown5Component,
 
     WidgetDetailCabangComponent,
     DialogDetailComponent,
@@ -228,6 +191,10 @@ import { WidgetDetailSchollComponent } from './content/cabang/widget-detail-scho
     WidgetCabangComponent,
     WidgetSchoolComponent,
     WidgetListSchollCabangComponent,
+    WidgetItemSchollCabangComponent,
+    WidgetSummarySchoolComponent,
+    WidgetSummarySchoolDashComponent,
+    WidgetSummaryInstansiSchoolComponent
   ],
   imports: [
     CommonModule,
@@ -286,7 +253,10 @@ import { WidgetDetailSchollComponent } from './content/cabang/widget-detail-scho
     WidgetListSchollCabangComponent,
     WidgetItemSchollCabangComponent,
     WidgetStructureSchollComponent,
-    WidgetDetailSchollComponent
+    WidgetDetailSchollComponent,
+    WidgetItemTotalKaryawanComponent,
+    WidgetSummarySchoolComponent,
+    WidgetSummarySchoolDashComponent
   ]
 })
 export class PartialsModule {

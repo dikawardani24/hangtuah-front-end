@@ -1,27 +1,11 @@
 <div class="container">
   <div class="row" style="margin-bottom: 20px;">
     <div class="col-xl-12">
-      <div class="card card-custom ">
-        <div class="card-header">
-          <div class="card-title">
-            <h4 class="card-label">Rekapitulasi Data Sekolah Di Perwakilan</h4>
-          </div>
-        </div>
-        <div class="card-body">
-          <div class="row">
-            <div class="col-xl-2" align="center" *ngFor="let item of listTotalAll">
-              <div class="col bg-light-primary px-6 py-8 rounded-xl mr-7 mb-7" >
-                <a href="#" class="text-blue font-weight-bold font-size-h6">
-                  {{item.total}} {{item.type}}
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="card-footer">
-          <h3 class="card-label">Total Sekolah : <span class="text-primary">{{totalAll}} Sekolah</span></h3>
-        </div>
-      </div>
+      <kt-widget-summary-instansi-school
+        title="Perwakilan"
+        [totalAll]="totalAll"
+        [totalInstansi]="listDataPool.length"
+        [listTotalAll]="listTotalAll"></kt-widget-summary-instansi-school>
     </div>
   </div>
 

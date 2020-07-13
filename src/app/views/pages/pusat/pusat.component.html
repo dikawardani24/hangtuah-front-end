@@ -1,18 +1,18 @@
 <div class="container">
   <div class="row">
     <div class="col-xl-12">
-        
+      <kt-widget-summary-instansi-school
+        title="Pusat"
+        [totalAll]="totalAll"
+        [totalInstansi]="listDataPool.length"
+        [listTotalAll]="listTotalAll"></kt-widget-summary-instansi-school>
     </div>
   </div>
 
   <div class="row">
-    <div class="col-xl-12">
-      <div fxLayout="row wrap" fxLayoutAlign="space-around center">
-      <ng-container *ngFor="let item of [1, 2,3,4,5,6,7,8,9,10]">
-        <kt-school-item >
-        </kt-school-item>
-      </ng-container>
-    </div>
+    <div class="col-xl-4" *ngFor="let item of listSchools" style="margin-top: 20px !important;">
+      <kt-widget-item-scholl-cabang [item]="item" >
+      </kt-widget-item-scholl-cabang>
     </div>
   </div>
 </div>
