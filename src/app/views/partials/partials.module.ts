@@ -5,7 +5,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgApexchartsModule } from 'ng-apexcharts';
 // NgBootstrap
-import { NgbDropdownModule, NgbTabsetModule, NgbTooltipModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgbDropdownModule, NgbTabsetModule, NgbTooltipModule, NgbModule } from '@ng-bootstrap/ng-bootstrap';
 // Perfect Scrollbar
 import { PerfectScrollbarModule } from 'ngx-perfect-scrollbar';
 // Core module
@@ -42,22 +42,6 @@ import {
   UserProfileComponent,
   UserProfile4Component
 } from './layout';
-import {
-  Widget1SalesStatComponent,
-  Widget9RecentActivitiesComponent,
-  Widget12NewUsersComponent,
-  Widget7WeeklySalesComponent,
-  Widget1TasksOverviewComponent,
-  Widget2NewArrivalsComponent,
-  Widget3NewArrivalsAuthorsComponent,
-  Widget4TodoComponent,
-  Widget8TrendsComponent,
-  Dropdown1Component,
-  Dropdown2Component,
-  Dropdown3Component,
-  Dropdown4Component,
-  Dropdown5Component
-} from './content/dashboard-widgets';
 // General
 import { NoticeComponent } from './content/general/notice/notice.component';
 import { PortletModule } from './content/general/portlet/portlet.module';
@@ -86,14 +70,30 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatDialogModule } from '@angular/material/dialog';
-import { WidgetCabangComponent } from './content/my-page/widget-cabang/widget-cabang.component';
-import { WidgetPengurusComponent } from './content/my-page/widget-pengurus/widget-pengurus.component';
-import { WidgetSchoolComponent } from './content/my-page/widget-school/widget-school.component';
 import { MatTreeModule } from '@angular/material/tree';
 import { SchoolItemModule } from './content/schooll-list/school-item/school-item.module';
 import { DialogDetailComponent } from './content/schooll-list/dialog-detail/dialog-detail.component';
 import { InfoComponent } from './content/pusat/info/info.component';
-
+import { WidgetDetailCabangComponent } from './content/cabang/widget-detail-cabang/widget-detail-cabang.component';
+import { WidgetStructureCabangComponent } from './content/cabang/widget-structure-cabang/widget-structure-cabang.component';
+import { NgxOrgChartModule } from 'ngx-org-chart';
+import { OrgChartModule } from '@mondal/org-chart';
+import {
+  WidgetDetailEmployeeCabangComponent
+} from './content/cabang/widget-detail-employee-cabang/widget-detail-employee-cabang.component';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { WidgetPengurusComponent } from './content/cabang/widget-pengurus/widget-pengurus.component';
+import { WidgetCabangComponent } from './content/cabang/widget-cabang/widget-cabang.component';
+import { WidgetSchoolComponent } from './content/cabang/widget-school/widget-school.component';
+import { WidgetListSchollCabangComponent } from './content/cabang/widget-list-scholl-cabang/widget-list-scholl-cabang.component';
+import { WidgetItemSchollCabangComponent } from './content/cabang/widget-item-scholl-cabang/widget-item-scholl-cabang.component';
+import { WidgetStructureSchollComponent } from './content/cabang/widget-structure-scholl/widget-structure-scholl.component';
+import { CdkScrollableModule } from '@angular/cdk/scrolling';
+import { WidgetDetailSchollComponent } from './content/cabang/widget-detail-scholl/widget-detail-scholl.component';
+import { WidgetSummarySchoolComponent } from './content/cabang/widget-summary-school/widget-summary-school.component';
+import { WidgetItemTotalKaryawanComponent } from './content/dashboard-widgets/widget-item-total-karyawan/widget-item-total-karyawan.component';
+import { WidgetSummarySchoolDashComponent } from './content/dashboard-widgets/widget-summary-school-dash/widget-summary-school-dash.component';
+import { WidgetSummaryInstansiSchoolComponent } from './content/dashboard-widgets/widget-summary-instansi-school/widget-summary-instansi-school.component';
 @NgModule({
   declarations: [
     ScrollTopComponent,
@@ -127,26 +127,23 @@ import { InfoComponent } from './content/pusat/info/info.component';
     UserProfile3Component,
     UserProfile4Component,
     CartComponent,
-    Widget1SalesStatComponent,
-    Widget9RecentActivitiesComponent,
-    Widget12NewUsersComponent,
-    Widget7WeeklySalesComponent,
-    Widget1TasksOverviewComponent,
-    Widget2NewArrivalsComponent,
-    Widget3NewArrivalsAuthorsComponent,
-    Widget4TodoComponent,
-    Widget8TrendsComponent,
-    Dropdown1Component,
-    Dropdown2Component,
-    Dropdown3Component,
-    Dropdown4Component,
-    Dropdown5Component,
 
-    WidgetSchoolComponent,
-    WidgetCabangComponent,
-    WidgetPengurusComponent,
     DialogDetailComponent,
     InfoComponent,
+    WidgetDetailCabangComponent,
+    WidgetStructureCabangComponent,
+    WidgetDetailEmployeeCabangComponent,
+    WidgetPengurusComponent,
+    WidgetCabangComponent,
+    WidgetSchoolComponent,
+    WidgetListSchollCabangComponent,
+    WidgetItemSchollCabangComponent,
+    WidgetStructureSchollComponent,
+    WidgetDetailSchollComponent,
+    WidgetSummarySchoolComponent,
+    WidgetItemTotalKaryawanComponent,
+    WidgetSummarySchoolDashComponent,
+    WidgetSummaryInstansiSchoolComponent
   ],
   exports: [
     WidgetModule,
@@ -184,24 +181,20 @@ import { InfoComponent } from './content/pusat/info/info.component';
     UserProfile3Component,
     UserProfile4Component,
     CartComponent,
-    Widget1SalesStatComponent,
-    Widget9RecentActivitiesComponent,
-    Widget12NewUsersComponent,
-    Widget7WeeklySalesComponent,
-    Widget1TasksOverviewComponent,
-    Widget2NewArrivalsComponent,
-    Widget3NewArrivalsAuthorsComponent,
-    Widget4TodoComponent,
-    Widget8TrendsComponent,
-    Dropdown1Component,
-    Dropdown2Component,
-    Dropdown3Component,
-    Dropdown4Component,
-    Dropdown5Component,
 
-    WidgetSchoolComponent,
-    WidgetCabangComponent,
+    WidgetDetailCabangComponent,
+    DialogDetailComponent,
+    WidgetDetailCabangComponent,
+    WidgetStructureCabangComponent,
+    WidgetDetailEmployeeCabangComponent,
     WidgetPengurusComponent,
+    WidgetCabangComponent,
+    WidgetSchoolComponent,
+    WidgetListSchollCabangComponent,
+    WidgetItemSchollCabangComponent,
+    WidgetSummarySchoolComponent,
+    WidgetSummarySchoolDashComponent,
+    WidgetSummaryInstansiSchoolComponent
   ],
   imports: [
     CommonModule,
@@ -217,6 +210,7 @@ import { InfoComponent } from './content/pusat/info/info.component';
     // angular material modules
     MatButtonModule,
     MatMenuModule,
+    MatFormFieldModule,
     MatSelectModule,
     MatInputModule,
     MatTableModule,
@@ -236,14 +230,33 @@ import { InfoComponent } from './content/pusat/info/info.component';
     MatTooltipModule,
     MatDialogModule,
     MatTreeModule,
+    NgxOrgChartModule,
+    OrgChartModule,
+    NgbModule,
+    CdkScrollableModule,
 
     // ng-bootstrap modules
     NgbDropdownModule,
     NgbTabsetModule,
     NgbTooltipModule,
   ],
+
   entryComponents: [
-    DialogDetailComponent
+    WidgetDetailCabangComponent,
+    DialogDetailComponent,
+    WidgetDetailCabangComponent,
+    WidgetStructureCabangComponent,
+    WidgetDetailEmployeeCabangComponent,
+    WidgetPengurusComponent,
+    WidgetCabangComponent,
+    WidgetSchoolComponent,
+    WidgetListSchollCabangComponent,
+    WidgetItemSchollCabangComponent,
+    WidgetStructureSchollComponent,
+    WidgetDetailSchollComponent,
+    WidgetItemTotalKaryawanComponent,
+    WidgetSummarySchoolComponent,
+    WidgetSummarySchoolDashComponent
   ]
 })
 export class PartialsModule {

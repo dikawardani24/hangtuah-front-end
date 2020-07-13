@@ -1,13 +1,10 @@
-export interface TitleNode {
-  title: string
-  children?: PersonNode[]
-}
-
 export interface PersonNode {
   nik: string
   name: string
-  jabatan: string
-  children?: TitleNode[]
+  designation: string
+  subordinates?: PersonNode[],
+  imageUrl: string,
+  cssClass: string
 }
 
 export abstract class Organization<T> {

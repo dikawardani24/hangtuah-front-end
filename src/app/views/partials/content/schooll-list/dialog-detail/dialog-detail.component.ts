@@ -1,11 +1,11 @@
 import { Component, OnInit, Inject } from '@angular/core';
-import { MatDialog, MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { DialogData } from 'src/app/views/pages/material/popups-and-modals/dialog/dialog.component';
+import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { FoodNode } from '../school-item/school-item.component';
 
 @Component({
   selector: 'kt-dialog-detail',
   templateUrl: './dialog-detail.component.html',
+  styleUrls: ['./dialog-detail.component.scss']
 })
 export class DialogDetailComponent implements OnInit {
 

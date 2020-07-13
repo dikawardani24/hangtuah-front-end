@@ -1,0 +1,17 @@
+<div class="card card-custom">
+  <div class="card-header">
+    <div class="card-title">
+      <h4 class="card-label">Struktur Organisasi {{item.getSekolah().name}}</h4>
+    </div>
+    <div class="card-toolbar">
+      <a href="javascript:void(0)" class="btn btn-sm btn-icon btn-bg-light btn-text-danger btn-hover-danger" (click)="close()"><i class="fa fa-window-close" aria-hidden="true"></i></a>
+    </div>
+  </div>
+  <div class="card-body">
+    <div class="row">
+      <div class="col-xl-12">
+        <mui-org-chart [topEmployee]="nodes" direction="horizontal" (itemClick)="viewDataEmployee($event)"></mui-org-chart>
+      </div>
+    </div>
+  </div>
+</div>

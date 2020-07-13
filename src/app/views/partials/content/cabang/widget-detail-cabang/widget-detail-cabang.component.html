@@ -1,0 +1,51 @@
+<div class="card card-custom">
+  <div class="card-header">
+    <div class="card-title">
+      <h4 class="card-label">{{title}}</h4>
+    </div>
+    <div class="card-toolbar">
+      <a href="javascript:void(0)" class="btn btn-sm btn-icon btn-bg-light btn-text-danger btn-hover-danger" (click)="close()"><i class="fa fa-window-close" aria-hidden="true"></i></a>
+    </div>
+  </div>
+  <div class="card-body">
+    <div class="row">
+      <div class="col-xl-6">
+        <div>
+          <label>ID Cabang</label>
+          <input type="text" value="{{selectedInstansi.id}}" class="form-control" disabled>
+        </div>
+
+        <div>
+          <label>Name</label>
+          <input type="text" value="{{selectedInstansi.name}}" class="form-control" disabled>
+        </div>
+        <div>
+          <label >Pusat</label>
+          <input type="text" value="{{pusat.name}}" class="form-control" disabled>
+        </div>
+        <div *ngIf="isPerwakilan()">
+          <label>Cabang</label>
+          <input type="text" value="{{cabang.name}}" class="form-control" disabled>
+        </div>
+      </div>
+      <div class="col-xl-6">
+        <div >
+          <label>Kota</label>
+          <input class="form-control" type="text" value="{{selectedInstansi.location.city}}" disabled>
+        </div>
+        <div >
+          <label>Provinsi</label>
+          <input class="form-control" type="text" value="{{selectedInstansi.location.province}}" disabled>
+        </div>
+        <div >
+          <label>Negara</label>
+          <input class="form-control" type="text" value="{{selectedInstansi.location.country}}" disabled>
+        </div>
+        <div>
+          <label>Alamat</label>
+          <textarea class="form-control" disabled name="" id="" cols="30" rows="5">{{selectedInstansi.location.address}}</textarea>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

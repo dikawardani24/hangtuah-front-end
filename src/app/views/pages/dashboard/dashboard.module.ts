@@ -21,7 +21,6 @@ import { DashboardComponent } from './dashboard.component';
     ]),
     // ng-bootstrap modules
     NgbDropdownModule,
-    NgbTabsetModule,
     NgbTooltipModule,
   ],
   providers: [],

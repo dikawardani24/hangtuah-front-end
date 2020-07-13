@@ -12,7 +12,7 @@ import { Injectable } from '@angular/core';
 import { DataPaudBulan } from '../schools/paud/paud-bulan';
 import { DataSDMarsudi } from '../schools/sd/sd-marsudi';
 import { DataSMPKurnia } from '../schools/smp/smp-kurnia';
-import { SmaCitraKasihData } from '../schools/sma/sma-citrakasih';
+import { DataSMACitraKasih } from '../schools/sma/sma-citrakasih';
 import { DataSMKBerkarya } from '../schools/smk/smk-berkarya';
 import { DataSMKCitraBangsa } from '../schools/smk/smk-citrabangsa';
 import { DataInstansi } from './data-hangtuah';
@@ -23,7 +23,7 @@ export class DataPusat extends DataInstansi<Pusat> {
     private dataPaudBulan: DataPaudBulan,
     private dataSdMarsudi: DataSDMarsudi,
     private dataSmpKurnia: DataSMPKurnia,
-    private dataSmaCitraKasih: SmaCitraKasihData,
+    private dataSmaCitraKasih: DataSMACitraKasih,
     private dataSmkBerkarya: DataSMKBerkarya,
     private dataSmkCitraBangsa: DataSMKCitraBangsa
   ) {

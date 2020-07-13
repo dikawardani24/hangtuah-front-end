@@ -35,6 +35,7 @@ import { TopbarComponent } from './header/topbar/topbar.component';
 import { MenuHorizontalComponent } from './header/menu-horizontal/menu-horizontal.component';
 import { PartialsModule } from '../partials/partials.module';
 import { BaseComponent } from './base/base.component';
+
 import { PagesModule } from '../pages/pages.module';
 import { HtmlClassService } from './html-class.service';
 import { HeaderMobileComponent } from './header/header-mobile/header-mobile.component';

@@ -5,13 +5,13 @@ import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
 import { FormsModule } from '@angular/forms';
 import { DialogDetailComponent } from './dialog-detail.component';
-import { NgbootstrapModule } from 'src/app/views/pages/ngbootstrap/ngbootstrap.module';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   imports: [
-    NgbootstrapModule,
     CommonModule,
     FormsModule,
+    NgbModule
   ],
   exports: [
     DialogDetailComponent

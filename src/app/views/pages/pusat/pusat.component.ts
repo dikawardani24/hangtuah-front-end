@@ -1,7 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { SchoolGroup, SchoolGroupType } from 'src/app/core/_base/crud/models/school-group';
-import { School, SchoolType } from 'src/app/core/_base/crud/models/school';
-import { Pengurus } from 'src/app/core/_base/crud/models/pengurus';
+import { DataInstansi } from 'src/app/core/generator/hangtuah/data-hangtuah';
+import { DataPoolPusat } from 'src/app/core/generator/data-pool/pusat-data-pool';
+import { Pusat } from 'src/app/core/_base/crud/models/hangtuah-organization';
+import { TotalType } from 'src/app/core/generator/hangtuah-org-generator';
+import { SchoolType } from 'src/app/core/_base/crud/models/school-organization';
+import { SchoolData } from 'src/app/core/generator/school-org-generator';
 
 @Component({
   selector: 'kt-pusat',
@@ -9,50 +12,78 @@ import { Pengurus } from 'src/app/core/_base/crud/models/pengurus';
   styleUrls: ['./pusat.component.scss']
 })
 export class PusatComponent implements OnInit {
-  schoolGroup = new SchoolGroup();
-  constructor() { }
+  listDataPool: DataInstansi<Pusat>[] = []
+  listSchools: SchoolData[] = []
+  listTotalAll: TotalType[] = []
+  totalAll = 0
 
-  generateDummyData() {
-      const schools: School[] = []
-      const pengurus = new Pengurus()
+  constructor(
+    private pusatDataPool: DataPoolPusat
+  ) { }
 
-      this.schoolGroup.id = Math.random()
-      this.schoolGroup.name = 'Pusat Hang Tuah'
-      this.schoolGroup.pengurus = pengurus
-      this.schoolGroup.schools = schools
-      this.schoolGroup.type = SchoolGroupType.PUSAT;
+  private collectDataSummary() {
+    let totalTk = 0
+    let totalPaud = 0
+    let totalSD = 0
+    let totalSMP = 0
+    let totalSMA = 0
+    let totalSMK = 0
 
-      pengurus.name = 'Dika Wardani'
-      pengurus.jabatan = 'Kepala Pusat'
-      pengurus.id = Math.random();
-      pengurus.group = this.schoolGroup
+    this.listDataPool.forEach(e => {
+      this.listSchools.push(...e.getListSchoolData())
 
-      for (let j = 0; j < 100; j++) {
-        const element = new School()
-        element.group = this.schoolGroup
-        element.id = j + 1
+      e.getTotalTypes().forEach(t => {
+        this.totalAll += t.total
 
-        if (j % 4 === 0) {
-          element.name = 'Santonini'
-          element.schoolType = SchoolType.SD
-        } else if (j % 3 === 0) {
-          element.name = 'Santonini 3'
-          element.schoolType = SchoolType.SMP
-        } else if (j % 2 === 0) {
-          element.name = 'Berdikari'
-          element.schoolType = SchoolType.SMA
-        } else if (j % 5 === 0) {
-          element.name = 'Cendra Kasih'
-          element.schoolType = SchoolType.SMK
-        } else {
-          element.name = 'Bergembira'
-          element.schoolType = SchoolType.PAUD
+        if (t.type === SchoolType.PAUD) {
+          totalPaud += t.total
         }
 
-        schools.push(element)
-      }
+        if (t.type === SchoolType.TK) {
+          totalTk += t.total
+        }
+
+        if (t.type === SchoolType.SD) {
+          totalSD += t.total
+        }
+
+        if (t.type === SchoolType.SMP) {
+          totalSMP += t.total
+        }
+
+        if (t.type === SchoolType.SMA) {
+          totalSMA += t.total
+        }
+
+        if (t.type === SchoolType.SMK) {
+          totalSMK += t.total
+        }
+      })
+    })
+
+    this.listTotalAll.push({
+      total: totalPaud, type: SchoolType.PAUD
+    })
+    this.listTotalAll.push({
+      total: totalTk, type: SchoolType.TK
+    })
+    this.listTotalAll.push({
+      total: totalSD, type: SchoolType.SD
+    })
+    this.listTotalAll.push({
+      total: totalSMP, type: SchoolType.SMP
+    })
+    this.listTotalAll.push({
+      total: totalSMA, type: SchoolType.SMA
+    })
+    this.listTotalAll.push({
+      total: totalSMK, type: SchoolType.SMK
+    })
   }
+
+
   ngOnInit() {
-    this.generateDummyData()
+    this.listDataPool = this.pusatDataPool.getListData()
+    this.collectDataSummary()
   }
 }

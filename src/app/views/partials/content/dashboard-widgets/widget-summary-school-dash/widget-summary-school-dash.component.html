@@ -1,0 +1,20 @@
+<div class="card card-custom ">
+  <div class="card-header">
+    <div class="card-title">
+      <h4 class="card-label">Rekapitulasi Data Sekolah Keseluruhan</h4>
+    </div>
+  </div>
+  <div class="card-body">
+    <div class="row">
+      <div class="col-xl-2" align="center" *ngFor="let item of listTotalAll">
+        <kt-widget-summary-school [item]="item"></kt-widget-summary-school>
+      </div>
+    </div>
+  </div>
+  <div class="card-footer">
+    <h6 class="card-label">Total Pusat : <span class="text-primary">{{totalPusat}} Pusat</span></h6>
+    <h6 class="card-label">Total Cabang : <span class="text-primary">{{totalCabang}} Cabang</span></h6>
+    <h6 class="card-label">Total Perwakilan : <span class="text-primary">{{totalPerwakilan}} Perwakilan</span></h6>
+    <h6 class="card-label">Total Sekolah : <span class="text-primary">{{totalAll}} Sekolah</span></h6>
+  </div>
+</div>

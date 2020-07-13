@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core'
-import { SchoolData } from '../../school-org-generator'
 import {
   KepalaSekolah,
   WaliKelas,
@@ -16,7 +15,7 @@ import { PaudData } from './paud'
 
 
 @Injectable()
-export class DataPaudMentari extends PaudData implements SchoolData {
+export class DataPaudMentari extends PaudData{
 
   getKepalaTataUsaha(): KepalaTataUsaha {
     return {

@@ -1,7 +1,18 @@
-import { KepalaInstansi, WakilKepalaInstansi, Manager, Staff, Instansi } from '../_base/crud/models/hangtuah-organization';
+import { KepalaInstansi, WakilKepalaInstansi, Manager, Staff, Instansi, JabatanInstansi } from '../_base/crud/models/hangtuah-organization';
 import { Organization, PersonNode } from './generator';
-import { Sekolah } from '../_base/crud/models/school-organization';
+import { Sekolah, SchoolType, JabatanSekolah } from '../_base/crud/models/school-organization';
 import { SchoolData } from './school-org-generator';
+
+
+export interface TotalType {
+  total: number,
+  type: SchoolType
+}
+
+export interface TotalEmployeeType {
+  total: number,
+  type: JabatanInstansi
+}
 
 export interface HangtuahData<T extends Instansi> {
   getInstansi(): T
@@ -10,6 +21,13 @@ export interface HangtuahData<T extends Instansi> {
   getListManager(): Manager[]
   getListStaff(): Staff[]
   getListSchoolData(): SchoolData[]
+  getTotalPaud(): number
+  getTotalTK(): number
+  getTotalSD(): number
+  getTotalSmp(): number
+  getTotalSma(): number
+  getTotalSmk(): number
+  getTotalTypes(): TotalType[]
 }
 
 export class HangtuahOrganization<T extends Instansi> extends Organization<HangtuahData<T>> {
@@ -22,7 +40,9 @@ export class HangtuahOrganization<T extends Instansi> extends Organization<Hangt
         staffNodes.push({
           nik: staff.nik,
           name: staff.name,
-          jabatan: staff.jabatan
+          designation: staff.jabatan,
+          imageUrl: 'assets/media/svg/avatars/009-boy-4.svg',
+          cssClass: 'mui-oc-man'
         })
       }
     })
@@ -39,36 +59,28 @@ export class HangtuahOrganization<T extends Instansi> extends Organization<Hangt
       managerNodes.push({
         nik: manager.nik,
         name: manager.name,
-        jabatan: manager.jabatan,
-        children: [
-          {
-            title: 'Staff',
-            children: this._getStaffFor(manager)
-          }
-        ]
+        designation: manager.jabatan,
+        subordinates: this._getStaffFor(manager),
+        imageUrl: 'assets/media/svg/avatars/009-boy-4.svg',
+        cssClass: 'mui-oc-dir '
+
       })
     });
 
     return {
       nik: kepalaInstansi.nik,
       name: kepalaInstansi.name,
-      jabatan: kepalaInstansi.jabatan,
-      children: [
+      designation: kepalaInstansi.jabatan,
+      imageUrl: 'assets/media/svg/avatars/009-boy-4.svg',
+      cssClass: 'mui-oc-ceo',
+      subordinates: [
         {
-          title: 'Wakil Kepala Instansi',
-          children: [
-            {
-              nik: wakKepInstansi.nik,
-              name: wakKepInstansi.name,
-              jabatan: wakKepInstansi.jabatan,
-              children: [
-                {
-                  title: 'Manager',
-                  children: managerNodes
-                }
-              ]
-            }
-          ]
+          nik: wakKepInstansi.nik,
+          name: wakKepInstansi.name,
+          designation: wakKepInstansi.jabatan,
+          subordinates: managerNodes,
+          imageUrl: 'assets/media/svg/avatars/009-boy-4.svg',
+          cssClass: 'mui-oc-vp'
         }
       ]
     }

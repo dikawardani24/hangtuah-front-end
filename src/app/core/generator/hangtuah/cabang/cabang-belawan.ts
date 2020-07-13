@@ -1,20 +1,26 @@
-import { HangtuahOrganization } from '../../hangtuah-org-generator';
-import { Cabang, KepalaInstansi, WakilKepalaInstansi, InstansiType, JabatanInstansi, Manager, Staff } from 'src/app/core/_base/crud/models/hangtuah-organization';
+import {
+  Cabang,
+  KepalaInstansi,
+  WakilKepalaInstansi,
+  InstansiType,
+  JabatanInstansi,
+  Manager,
+  Staff
+} from 'src/app/core/_base/crud/models/hangtuah-organization';
 import { Injectable } from '@angular/core';
 import { DataPusat } from '../pusat';
 import { DataSDMarsudi } from '../../schools/sd/sd-marsudi';
 import { DataSMPKurnia } from '../../schools/smp/smp-kurnia';
-import { SmaCitraKasihData } from '../../schools/sma/sma-citrakasih';
+import { DataSMACitraKasih } from '../../schools/sma/sma-citrakasih';
 import { DataSMKBerkarya } from '../../schools/smk/smk-berkarya';
 import { DataSMKCitraBangsa } from '../../schools/smk/smk-citrabangsa';
 import { DataSDTarakinata } from '../../schools/sd/sd-tarakinata';
 import { DataSMPNugraha } from '../../schools/smp/smp-nugraha';
 import { DataInstansi } from '../data-hangtuah';
-import { extend } from 'lodash';
 import { SchoolData } from '../../school-org-generator';
 
 @Injectable()
-export class CabangBelawan extends DataInstansi<Cabang> {
+export class DataCabangBelawan extends DataInstansi<Cabang> {
 
   constructor(
     private dataPusat: DataPusat,
@@ -22,7 +28,7 @@ export class CabangBelawan extends DataInstansi<Cabang> {
     private dataSdTaraKinata: DataSDTarakinata,
     private dataSmpKurnia: DataSMPKurnia,
     private dataSmpNugraha: DataSMPNugraha,
-    private dataSmaCitraKasih: SmaCitraKasihData,
+    private dataSmaCitraKasih: DataSMACitraKasih,
     private dataSmkBerkarya: DataSMKBerkarya,
     private dataSmkCitraBangsa: DataSMKCitraBangsa
   ) {
@@ -81,6 +87,7 @@ export class CabangBelawan extends DataInstansi<Cabang> {
   getListManager(): Manager[] {
     return [
       {
+<<<<<<< HEAD
         nik: 'MKC11',
         name: 'Isna Malinda',
         jabatan: JabatanInstansi.MANAGER,
@@ -105,6 +112,18 @@ export class CabangBelawan extends DataInstansi<Cabang> {
           address: 'Jl. Inderagiri Rt 11/03 No. 11',
           city: 'Medan',
           province: 'Sumatera Utara',
+=======
+        nik: 'MPS1',
+        name: 'Herman Jatmoko',
+        jabatan: JabatanInstansi.MANAGER,
+        wakilKepala: this.getWakilKepalaInstansi(),
+        instansi: this.getInstansi(),
+        phoneNumber: '0873-2345-3233',
+        location: {
+          address: 'Jl. Kornea Rt 01/02 No. 3A',
+          city: 'Jakarta Utara',
+          province: 'DKI Jakarta',
+>>>>>>> 0545dd713cc8117d0463acbca4bca3c3c2b277a9
           country: 'Indonesia'
         }
       }
@@ -114,6 +133,7 @@ export class CabangBelawan extends DataInstansi<Cabang> {
   getListStaff(): Staff[] {
     return [
       {
+<<<<<<< HEAD
         nik: 'SKC11',
         name: 'Pupun Nasiha',
         jabatan: JabatanInstansi.STAFF,
@@ -124,10 +144,23 @@ export class CabangBelawan extends DataInstansi<Cabang> {
           address: 'Jl. Serdang Rt 01/02 No. 12',
           city: 'Medan',
           province: 'Sumatera Utara',
+=======
+        nik: 'SPS1',
+        name: 'Jumadi Akhir',
+        jabatan: JabatanInstansi.STAFF,
+        manager: this.getListManager()[0],
+        instansi: this.getInstansi(),
+        phoneNumber: '0873-4563-3233',
+        location: {
+          address: 'Jl. Kornea Rt 01/02 No. 4A',
+          city: 'Jakarta Utara',
+          province: 'DKI Jakarta',
+>>>>>>> 0545dd713cc8117d0463acbca4bca3c3c2b277a9
           country: 'Indonesia'
         }
       },
       {
+<<<<<<< HEAD
         nik: 'SKC12',
         name: 'Zulfa Indraguna',
         jabatan: JabatanInstansi.STAFF,
@@ -169,6 +202,21 @@ export class CabangBelawan extends DataInstansi<Cabang> {
           country: 'Indonesia'
         }
       }
+=======
+        nik: 'SPS2',
+        name: 'Johny Utama',
+        jabatan: JabatanInstansi.STAFF,
+        instansi: this.getInstansi(),
+        manager: this.getListManager()[0],
+        phoneNumber: '0873-2345-3322',
+        location: {
+          address: 'Jl. Kornea Rt 01/02 No. 5A',
+          city: 'Jakarta Utara',
+          province: 'DKI Jakarta',
+          country: 'Indonesia'
+        }
+      },
+>>>>>>> 0545dd713cc8117d0463acbca4bca3c3c2b277a9
     ]
   }
 
