@@ -15,6 +15,8 @@ export class WidgetSummaryInstansiSchoolComponent implements OnInit {
   title = ''
   @Input()
   totalInstansi = 0
+  @Input()
+  pathUrl = ''
 
   constructor() { }
 
