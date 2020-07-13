@@ -3,22 +3,22 @@ import { DataInstansi } from '../data-hangtuah';
 import { CabangBelawan } from '../cabang/cabang-belawan';
 
 
-export class PerwakilanSabang extends DataInstansi<Perwakilan> {
+export class PerwakilanDumai extends DataInstansi<Perwakilan> {
   constructor(private cabangBelawan: CabangBelawan) {
     super()
   }
 
   getInstansi(): Perwakilan {
     return {
-      id: 2,
-      name: 'Perwakilan Sabang',
+      id: 3,
+      name: 'Perwakilan Dumai',
       type: InstansiType.PERWAKILAN,
       cabang: this.cabangBelawan.getInstansi(),
       listSekolah: this.getListSekolah(),
       location: {
-        address: 'Jl. Habibah Rt 01/02 No. 10',
-        city: 'Jakarta Selatan',
-        province: 'DKI Jakarta',
+        address: 'Jl. Hang Tuah Rt 01/02 No. 27',
+        city: 'Dumai',
+        province: 'Riau',
         country: 'Indonesia'
       }
     }
@@ -26,15 +26,15 @@ export class PerwakilanSabang extends DataInstansi<Perwakilan> {
 
   getKepalaInstansi(): KepalaInstansi {
     return {
-      nik: 'KWK2',
-      name: 'Ronald Iskak',
+      nik: 'KWK3',
+      name: 'John Iskandar',
       instansi: this.getInstansi(),
       jabatan: JabatanInstansi.DIRUT,
-      phoneNumber: '0873-3242-3233',
+      phoneNumber: '0896-5432-0001',
       location: {
-        address: 'Jl. Habibah Rt 01/02 No. 20',
-        city: 'Jakarta Selatan',
-        province: 'DKI Jakarta',
+        address: 'Jl. Sultan Syarif Rt 01/02 No. 1',
+        city: 'Dumai',
+        province: 'Riau',
         country: 'Indonesia'
       }
     }
@@ -42,16 +42,16 @@ export class PerwakilanSabang extends DataInstansi<Perwakilan> {
 
   getWakilKepalaInstansi(): WakilKepalaInstansi {
     return {
-      nik: 'WKWK2',
-      name: 'Puri Wongsonegoro',
+      nik: 'WKWK3',
+      name: 'Steven Johanson',
       instansi: this.getInstansi(),
       jabatan: JabatanInstansi.WA_DIRUT,
       kepala: this.getKepalaInstansi(),
-      phoneNumber: '0873-2345-3241',
+      phoneNumber: '0821-0000-9999',
       location: {
-        address: 'Jl. Habibah Rt 01/02 No. 1',
-        city: 'Jakarta Selatan',
-        province: 'DKI Jakarta',
+        address: 'Jl. Pelabuhan Rt 06/02 No. 10',
+        city: 'Dumai',
+        province: 'Riau',
         country: 'Indonesia'
       }
     }
@@ -60,30 +60,30 @@ export class PerwakilanSabang extends DataInstansi<Perwakilan> {
   getListManager(): Manager[] {
     return [
       {
-        nik: 'MWK21',
-        name: 'Aji Saputra',
+        nik: 'MWK31',
+        name: 'Jessica Linda',
         jabatan: JabatanInstansi.MANAGER,
         wakilKepala: this.getWakilKepalaInstansi(),
         instansi: this.getInstansi(),
-        phoneNumber: '0812-34567-0001',
+        phoneNumber: '0812-0000-8888',
         location: {
-          address: 'Jl. Habibah Rt 01/02 No. 13',
-          city: 'Jakarta Selatan',
-          province: 'DKI Jakarta',
+          address: 'Jl. Wan Amir Rt 10/02 No. 11',
+          city: 'Dumai',
+          province: 'Riau',
           country: 'Indonesia'
         }
       },
       {
-        nik: 'MPS22',
-        name: 'Nurhalisa',
+        nik: 'MPS32',
+        name: 'Johanes Putra',
         jabatan: JabatanInstansi.MANAGER,
         wakilKepala: this.getWakilKepalaInstansi(),
         instansi: this.getInstansi(),
-        phoneNumber: '0873-4534-3233',
+        phoneNumber: '0878-8899-0002',
         location: {
-          address: 'Jl. Purba Rt 01/02 No. 3A',
-          city: 'Jakarta Utara',
-          province: 'DKI Jakarta',
+          address: 'Jl. Sultan Hasannudin Rt 11/03 No. 11',
+          city: 'Dumai',
+          province: 'Riau',
           country: 'Indonesia'
         }
       }
@@ -93,58 +93,58 @@ export class PerwakilanSabang extends DataInstansi<Perwakilan> {
   getListStaff(): Staff[] {
     return [
       {
-        nik: 'SWK21',
-        name: 'Putra Nababan',
+        nik: 'SWK31',
+        name: 'Putri Lestari',
         jabatan: JabatanInstansi.STAFF,
         manager: this.getListManager()[0],
         instansi: this.getInstansi(),
-        phoneNumber: '0876-5432-1000',
+        phoneNumber: '0877-0000-1234',
         location: {
-          address: 'Jl. Manggis Rt 01/02 No. 12',
-          city: 'Jakarta Timur',
-          province: 'DKI Jakarta',
+          address: 'Jl. Ratu Sima Rt 05/02 No. 22',
+          city: 'Dumai',
+          province: 'Riau',
           country: 'Indonesia'
         }
       },
       {
-        nik: 'SWK22',
-        name: 'Andrea Gunawan',
+        nik: 'SWK32',
+        name: 'Jonathan Gunadi',
         jabatan: JabatanInstansi.STAFF,
         instansi: this.getInstansi(),
         manager: this.getListManager()[0],
-        phoneNumber: '0878-7654-3210',
+        phoneNumber: '0878-9999-0021',
         location: {
-          address: 'Jl. Purnawarman Rt 01/02 No. 5',
-          city: 'Jakarta Timur',
-          province: 'DKI Jakarta',
+          address: 'Jl. Pangeran Diponegoro Rt 10/02 No. 99',
+          city: 'Dumai',
+          province: 'Riau',
           country: 'Indonesia'
         }
       },
       {
-        nik: 'SWK23',
-        name: 'Rizky Akbar',
+        nik: 'SWK33',
+        name: 'Fauzi Dorina',
         jabatan: JabatanInstansi.STAFF,
         instansi: this.getInstansi(),
         manager: this.getListManager()[1],
-        phoneNumber: '0896-5432-0001',
+        phoneNumber: '0897-4444-5432',
         location: {
-          address: 'Jl. Matahari Rt 03/02 No. 01',
-          city: 'Jakarta Barat',
-          province: 'DKI Jakarta',
+          address: 'Jl. Sultan Mohammad Amin Rt 03/02 No. 88',
+          city: 'Dumai',
+          province: 'Riau',
           country: 'Indonesia'
         }
       },
       {
-        nik: 'SWK24',
-        name: 'Indra Santosa',
+        nik: 'SWK34',
+        name: 'Joel Himawan',
         jabatan: JabatanInstansi.STAFF,
         instansi: this.getInstansi(),
         manager: this.getListManager()[1],
-        phoneNumber: '0878-8890-0002',
+        phoneNumber: '0878-8899-0022',
         location: {
-          address: 'Jl. Sabang Rt 05/02 No. 15',
-          city: 'Jakarta Selatan',
-          province: 'DKI Jakarta',
+          address: 'Jl. Kartini Rt 05/04 No. 23',
+          city: 'Dumai',
+          province: 'Riau',
           country: 'Indonesia'
         }
       }

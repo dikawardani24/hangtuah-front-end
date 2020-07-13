@@ -1,24 +1,25 @@
 import { Perwakilan, InstansiType, KepalaInstansi, JabatanInstansi, WakilKepalaInstansi, Manager, Staff } from 'src/app/core/_base/crud/models/hangtuah-organization';
 import { DataInstansi } from '../data-hangtuah';
-import { CabangBelawan } from '../cabang/cabang-belawan';
+import { CabangJakarta } from '../cabang/cabang-jakarta';
 
 
-export class PerwakilanSabang extends DataInstansi<Perwakilan> {
-  constructor(private cabangBelawan: CabangBelawan) {
+
+export class PerwakilanLampung extends DataInstansi<Perwakilan> {
+  constructor(private cabangJakarta: CabangJakarta) {
     super()
   }
 
   getInstansi(): Perwakilan {
     return {
-      id: 2,
-      name: 'Perwakilan Sabang',
+      id: 8,
+      name: 'Perwakilan Lampung',
       type: InstansiType.PERWAKILAN,
-      cabang: this.cabangBelawan.getInstansi(),
+      cabang: this.cabangJakarta.getInstansi(),
       listSekolah: this.getListSekolah(),
       location: {
-        address: 'Jl. Habibah Rt 01/02 No. 10',
-        city: 'Jakarta Selatan',
-        province: 'DKI Jakarta',
+        address: 'Jl. Anak Ratu Aji Rt 01/02 No. 11',
+        city: 'Lampung',
+        province: 'Lampung',
         country: 'Indonesia'
       }
     }
@@ -26,15 +27,15 @@ export class PerwakilanSabang extends DataInstansi<Perwakilan> {
 
   getKepalaInstansi(): KepalaInstansi {
     return {
-      nik: 'KWK2',
-      name: 'Ronald Iskak',
+      nik: 'KWK8',
+      name: 'Novia Lestari',
       instansi: this.getInstansi(),
       jabatan: JabatanInstansi.DIRUT,
-      phoneNumber: '0873-3242-3233',
+      phoneNumber: '0873-9670-0891',
       location: {
-        address: 'Jl. Habibah Rt 01/02 No. 20',
-        city: 'Jakarta Selatan',
-        province: 'DKI Jakarta',
+        address: 'Jl. Bakauheni Rt 01/02 No. 20',
+        city: 'Lampung',
+        province: 'Lampung',
         country: 'Indonesia'
       }
     }
@@ -42,16 +43,16 @@ export class PerwakilanSabang extends DataInstansi<Perwakilan> {
 
   getWakilKepalaInstansi(): WakilKepalaInstansi {
     return {
-      nik: 'WKWK2',
-      name: 'Puri Wongsonegoro',
+      nik: 'WKWK8',
+      name: 'Wirawan',
       instansi: this.getInstansi(),
       jabatan: JabatanInstansi.WA_DIRUT,
       kepala: this.getKepalaInstansi(),
-      phoneNumber: '0873-2345-3241',
+      phoneNumber: '0873-0110-9911',
       location: {
-        address: 'Jl. Habibah Rt 01/02 No. 1',
-        city: 'Jakarta Selatan',
-        province: 'DKI Jakarta',
+        address: 'Jl. Lintas Sumatera Rt 01/02 No. 1',
+        city: 'Lampung',
+        province: 'Lampung',
         country: 'Indonesia'
       }
     }
@@ -60,30 +61,30 @@ export class PerwakilanSabang extends DataInstansi<Perwakilan> {
   getListManager(): Manager[] {
     return [
       {
-        nik: 'MWK21',
-        name: 'Aji Saputra',
+        nik: 'MWK81',
+        name: 'Wiranto',
         jabatan: JabatanInstansi.MANAGER,
         wakilKepala: this.getWakilKepalaInstansi(),
         instansi: this.getInstansi(),
-        phoneNumber: '0812-34567-0001',
+        phoneNumber: '0812-6251-9835',
         location: {
-          address: 'Jl. Habibah Rt 01/02 No. 13',
-          city: 'Jakarta Selatan',
-          province: 'DKI Jakarta',
+          address: 'Jl. Brawijaya Rt 01/02 No. 13',
+          city: 'Lampung',
+        province: 'Lampung',
           country: 'Indonesia'
         }
       },
       {
-        nik: 'MPS22',
-        name: 'Nurhalisa',
+        nik: 'MPS82',
+        name: 'Ita Rosita',
         jabatan: JabatanInstansi.MANAGER,
         wakilKepala: this.getWakilKepalaInstansi(),
         instansi: this.getInstansi(),
-        phoneNumber: '0873-4534-3233',
+        phoneNumber: '0873-5643-3233',
         location: {
-          address: 'Jl. Purba Rt 01/02 No. 3A',
-          city: 'Jakarta Utara',
-          province: 'DKI Jakarta',
+          address: 'Jl. Raya Kota Gajah Rt 01/02 No. 3A',
+          city: 'Lampung',
+          province: 'Lampung',
           country: 'Indonesia'
         }
       }
@@ -93,58 +94,58 @@ export class PerwakilanSabang extends DataInstansi<Perwakilan> {
   getListStaff(): Staff[] {
     return [
       {
-        nik: 'SWK21',
-        name: 'Putra Nababan',
+        nik: 'SWK81',
+        name: 'Sardi Lembayung',
         jabatan: JabatanInstansi.STAFF,
         manager: this.getListManager()[0],
         instansi: this.getInstansi(),
-        phoneNumber: '0876-5432-1000',
+        phoneNumber: '0876-0190-0110',
         location: {
-          address: 'Jl. Manggis Rt 01/02 No. 12',
-          city: 'Jakarta Timur',
-          province: 'DKI Jakarta',
+          address: 'Jl. Buyut Ilir Rt 01/02 No. 12',
+          city: 'Lampung',
+          province: 'Lampung',
           country: 'Indonesia'
         }
       },
       {
-        nik: 'SWK22',
-        name: 'Andrea Gunawan',
+        nik: 'SWK82',
+        name: 'Indah Suharti',
         jabatan: JabatanInstansi.STAFF,
         instansi: this.getInstansi(),
         manager: this.getListManager()[0],
-        phoneNumber: '0878-7654-3210',
+        phoneNumber: '0878-1902-3210',
         location: {
-          address: 'Jl. Purnawarman Rt 01/02 No. 5',
-          city: 'Jakarta Timur',
-          province: 'DKI Jakarta',
+          address: 'Jl. Raya Merapi Rt 01/02 No. 5',
+          city: 'Lampung',
+          province: 'Lampung',
           country: 'Indonesia'
         }
       },
       {
-        nik: 'SWK23',
-        name: 'Rizky Akbar',
+        nik: 'SWK83',
+        name: 'Sundari',
         jabatan: JabatanInstansi.STAFF,
         instansi: this.getInstansi(),
         manager: this.getListManager()[1],
-        phoneNumber: '0896-5432-0001',
+        phoneNumber: '0896-1122-1901',
         location: {
-          address: 'Jl. Matahari Rt 03/02 No. 01',
-          city: 'Jakarta Barat',
-          province: 'DKI Jakarta',
+          address: 'Jl. Sumber Agung Rt 03/02 No. 01',
+          city: 'Lampung',
+          province: 'Lampung',
           country: 'Indonesia'
         }
       },
       {
-        nik: 'SWK24',
-        name: 'Indra Santosa',
+        nik: 'SWK84',
+        name: 'Iwan Mursini',
         jabatan: JabatanInstansi.STAFF,
         instansi: this.getInstansi(),
         manager: this.getListManager()[1],
-        phoneNumber: '0878-8890-0002',
+        phoneNumber: '0878-2233-0002',
         location: {
-          address: 'Jl. Sabang Rt 05/02 No. 15',
-          city: 'Jakarta Selatan',
-          province: 'DKI Jakarta',
+          address: 'Jl. Kayu Agung Rt 05/02 No. 15',
+          city: 'Lampung',
+          province: 'Lampung',
           country: 'Indonesia'
         }
       }

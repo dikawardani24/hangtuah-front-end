@@ -14,7 +14,7 @@ import { extend } from 'lodash';
 import { SchoolData } from '../../school-org-generator';
 
 @Injectable()
-export class CabangBelawan extends DataInstansi<Cabang> {
+export class CabangTanjungPinang extends DataInstansi<Cabang> {
 
   constructor(
     private dataPusat: DataPusat,
@@ -32,14 +32,14 @@ export class CabangBelawan extends DataInstansi<Cabang> {
   getInstansi(): Cabang {
     return {
       id: 1,
-      name: 'Cabang Belawan',
+      name: 'Cabang Tanjung Pinang',
       type: InstansiType.CABANG,
       pusat: this.dataPusat.getInstansi(),
       listSekolah: this.getListSekolah(),
       location: {
-        address: 'Jl. Indraputra Rt 01/02 No. 10',
-        city: 'Medan',
-        province: 'Sumatera Utara',
+        address: 'Jl. D.I. Pandjaitan Rt 01/02 No. 10',
+        city: 'Tanjung Pinang',
+        province: 'Kep. Riau',
         country: 'Indonesia'
       }
     }
@@ -47,15 +47,15 @@ export class CabangBelawan extends DataInstansi<Cabang> {
 
   getKepalaInstansi(): KepalaInstansi {
     return {
-      nik: 'KPC1',
-      name: 'Suhartono',
+      nik: 'KPC11',
+      name: 'Agus Tjandra',
       instansi: this.getInstansi(),
       jabatan: JabatanInstansi.DIRUT,
-      phoneNumber: '0873-3242-3425',
+      phoneNumber: '0873-1452-3425',
       location: {
-        address: 'Jl. Yos Sudarso Rt 01/02 No. 11',
-        city: 'Medan',
-        province: 'Sumatera Utara',
+        address: 'Jl. Bukit Bestari Rt 01/02 No. 11',
+        city: 'Tanjung Pinang',
+        province: 'Kep. Riau',
         country: 'Indonesia'
       }
     }
@@ -63,16 +63,16 @@ export class CabangBelawan extends DataInstansi<Cabang> {
 
   getWakilKepalaInstansi(): WakilKepalaInstansi {
     return {
-      nik: 'WKPC1',
+      nik: 'WKPC11',
       name: 'Theodora',
       instansi: this.getInstansi(),
       jabatan: JabatanInstansi.WA_DIRUT,
       kepala: this.getKepalaInstansi(),
-      phoneNumber: '0873-2345-5555',
+      phoneNumber: '0873-2345-5895',
       location: {
-        address: 'Jl. Belwan I Rt 01/02 No. 2A',
-        city: 'Medan',
-        province: 'Sumattera Utara',
+        address: 'Jl. Harmoko I Rt 01/02 No. 2A',
+        city: 'Tanjung Pinang',
+        province: 'Kep. Riau',
         country: 'Indonesia'
       }
     }
@@ -81,30 +81,30 @@ export class CabangBelawan extends DataInstansi<Cabang> {
   getListManager(): Manager[] {
     return [
       {
-        nik: 'MKC11',
-        name: 'Isna Malinda',
+        nik: 'MKC111',
+        name: 'Xaverius Rahardjo',
         jabatan: JabatanInstansi.MANAGER,
         wakilKepala: this.getWakilKepalaInstansi(),
         instansi: this.getInstansi(),
-        phoneNumber: '0812-0000-6666',
+        phoneNumber: '0812-9900-6666',
         location: {
-          address: 'Jl. Deli I Rt 10/02 No. 11',
-          city: 'Medan',
-          province: 'Sumatera Utara',
+          address: 'Jl. Menur Rt 10/02 No. 11',
+          city: 'Tanjung Pinang',
+         province: 'Kep. Riau',
           country: 'Indonesia'
         }
       },
       {
-        nik: 'MKC12',
-        name: 'Tikawe',
+        nik: 'MKC112',
+        name: 'Nurry Agus',
         jabatan: JabatanInstansi.MANAGER,
         wakilKepala: this.getWakilKepalaInstansi(),
         instansi: this.getInstansi(),
-        phoneNumber: '0878-8899-0890',
+        phoneNumber: '0878-8811-0890',
         location: {
-          address: 'Jl. Inderagiri Rt 11/03 No. 11',
-          city: 'Medan',
-          province: 'Sumatera Utara',
+          address: 'Jl. Wonosari Rt 11/03 No. 11',
+          city: 'Tanjung Pinang',
+          province: 'Kep. Riau',
           country: 'Indonesia'
         }
       }
@@ -114,58 +114,58 @@ export class CabangBelawan extends DataInstansi<Cabang> {
   getListStaff(): Staff[] {
     return [
       {
-        nik: 'SKC11',
-        name: 'Pupun Nasiha',
+        nik: 'SKC111',
+        name: 'Ramli Alphany',
         jabatan: JabatanInstansi.STAFF,
         manager: this.getListManager()[0],
         instansi: this.getInstansi(),
-        phoneNumber: '0878-5432-1000',
+        phoneNumber: '0878-5432-1034',
         location: {
-          address: 'Jl. Serdang Rt 01/02 No. 12',
-          city: 'Medan',
-          province: 'Sumatera Utara',
+          address: 'Jl. Suka Jaya Rt 01/02 No. 12',
+          city: 'Tanjung Pinang',
+          province: 'Kep. Riau',
           country: 'Indonesia'
         }
       },
       {
-        nik: 'SKC12',
-        name: 'Zulfa Indraguna',
+        nik: 'SKC112',
+        name: 'Rifaldi',
         jabatan: JabatanInstansi.STAFF,
         instansi: this.getInstansi(),
         manager: this.getListManager()[0],
-        phoneNumber: '0878-0022-3210',
+        phoneNumber: '0878-0043-3210',
         location: {
-          address: 'Jl. Kampar Rt 01/02 No. 5',
-          city: 'Medan',
-          province: 'Sumatera Utara',
+          address: 'Jl. Ilham Rt 01/02 No. 5',
+          city: 'Tanjung Pinang',
+          province: 'Kep. Riau',
           country: 'Indonesia'
         }
       },
       {
-        nik: 'SKC13',
-        name: 'Rizal Bintoro',
+        nik: 'SKC113',
+        name: 'Zaky Luthfi',
         jabatan: JabatanInstansi.STAFF,
         instansi: this.getInstansi(),
         manager: this.getListManager()[1],
-        phoneNumber: '0896-5552-0001',
+        phoneNumber: '0896-5552-4421',
         location: {
-          address: 'Jl. Bliton Rt 03/02 No. 01',
-          city: 'Medan',
-          province: 'Sumatera Utara',
+          address: 'Jl. Cenderawasih Rt 03/02 No. 23',
+          city: 'Tanjung Pinang',
+          province: 'Kep. Riau',
           country: 'Indonesia'
         }
       },
       {
-        nik: 'SKC14',
-        name: 'Yan Charles',
+        nik: 'SKC114',
+        name: 'Syamil Hidayatullah',
         jabatan: JabatanInstansi.STAFF,
         instansi: this.getInstansi(),
         manager: this.getListManager()[1],
         phoneNumber: '0878-8810-2002',
         location: {
-          address: 'Jl. Sabang Rt 05/02 No. 15',
-          city: 'Medan',
-          province: 'Sumatera Utara',
+          address: 'Jl. Bukit Asri Rt 05/02 No. 2',
+          city: 'Tanjung Pinang',
+          province: 'Kep. Riau',
           country: 'Indonesia'
         }
       }
