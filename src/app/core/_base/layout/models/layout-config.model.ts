@@ -157,7 +157,7 @@ export interface LayoutConfigModel {
       };
     };
     'quick-panel'?: {
-      display?: true;
+      display?: boolean;
       offcanvas?: {
         direction: 'right' | 'left'
       };

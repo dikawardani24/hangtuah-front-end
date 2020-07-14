@@ -155,14 +155,14 @@ export class LayoutConfig {
     },
     extras: {
       search: {
-        display: true,
+        display: false,
         layout: 'dropdown', // offcanvas, dropdown
         offcanvas: {
           direction: 'right'
         }
       },
       notifications: {
-        display: true,
+        display: false,
         layout: 'dropdown', // offcanvas, dropdown
         dropdown: {
           style: 'light' // light|dark
@@ -182,16 +182,16 @@ export class LayoutConfig {
         }
       },
       languages: {
-        display: true
+        display: false
       },
       cart: {
-        display: true,
+        display: false,
         dropdown: {
           style: 'light'
         }
       },
       'quick-actions': {
-        display: true,
+        display: false,
         layout: 'dropdown', // offcanvas, dropdown
         dropdown: {
           style: 'light'
@@ -201,7 +201,7 @@ export class LayoutConfig {
         }
       },
       'quick-panel': {
-        display: true,
+        display: false,
         offcanvas: {
           direction: 'right'
         }
@@ -210,7 +210,7 @@ export class LayoutConfig {
         display: false
       },
       toolbar: {
-        display: true
+        display: false
       },
       scrolltop: {
         display: true

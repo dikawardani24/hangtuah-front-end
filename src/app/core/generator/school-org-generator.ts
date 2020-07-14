@@ -50,28 +50,28 @@ export abstract class BaseSchoolData implements SchoolData {
   }
 
   getSekolah(): Sekolah {
-    throw new Error("Method not implemented.")
+    throw new Error('Method not implemented.')
   }
   getListKelas(): Kelas[] {
-    throw new Error("Method not implemented.")
+    throw new Error('Method not implemented.')
   }
   getKepalaSekolah(): KepalaSekolah {
-    throw new Error("Method not implemented.")
+    throw new Error('Method not implemented.')
   }
   getWakilKepalaSekolah(): WakilKepalaSekolah {
-    throw new Error("Method not implemented.")
+    throw new Error('Method not implemented.')
   }
   getKepalaTataUsaha(): KepalaTataUsaha {
-    throw new Error("Method not implemented.")
+    throw new Error('Method not implemented.')
   }
   getListStaffTataUsaha(): StaffTataUsaha[] {
-    throw new Error("Method not implemented.")
+    throw new Error('Method not implemented.')
   }
   getListWalikelas(): WaliKelas[] {
-    throw new Error("Method not implemented.")
+    throw new Error('Method not implemented.')
   }
   getListGUru(): Guru[] {
-    throw new Error("Method not implemented.")
+    throw new Error('Method not implemented.')
   }
 }
 
@@ -116,8 +116,6 @@ export class SchoolOrganization extends Organization<SchoolData> {
       })
     });
 
-
-
     return {
       nik: kepsekNode.nik,
       name: kepsekNode.name,
@@ -130,18 +128,20 @@ export class SchoolOrganization extends Organization<SchoolData> {
           name: wakilKepsekNode.name,
           designation: wakilKepsekNode.jabatan,
           imageUrl: 'assets/media/svg/avatars/009-boy-4.svg',
-          cssClass: ''
-        },
-        {
-          nik: kepalaTuNode.nik,
-          name: kepalaTuNode.name,
-          designation: kepalaTuNode.jabatan,
-          subordinates: staffTuNodes,
-          imageUrl: 'assets/media/svg/avatars/009-boy-4.svg',
-          cssClass: ''
-        },
-        ...waliKelasNodes,
+          cssClass: '',
+          subordinates: [
+            {
+              nik: kepalaTuNode.nik,
+              name: kepalaTuNode.name,
+              designation: kepalaTuNode.jabatan,
+              subordinates: staffTuNodes,
+              imageUrl: 'assets/media/svg/avatars/009-boy-4.svg',
+              cssClass: ''
+            },
+            ...waliKelasNodes,
 
+          ]
+        },
       ]
     }
   }

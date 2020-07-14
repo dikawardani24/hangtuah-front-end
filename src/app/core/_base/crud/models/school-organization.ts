@@ -41,6 +41,10 @@ export enum JabatanSekolah {
 export class MataPelajaran {
   name: string
   grade: Grade
+
+  toString() {
+    return `${name} ${this.grade}`
+  }
 }
 
 export class Karyawan {
