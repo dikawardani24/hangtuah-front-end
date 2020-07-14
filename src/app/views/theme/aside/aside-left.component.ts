@@ -80,7 +80,7 @@ export class AsideLeftComponent implements OnInit, AfterViewInit {
   ) {
   }
 
-  ngAfterViewInit(): void {    
+  ngAfterViewInit(): void {
   }
 
   ngOnInit() {
@@ -105,7 +105,7 @@ export class AsideLeftComponent implements OnInit, AfterViewInit {
     }
 
     this.asideClasses = this.htmlClassService.getClasses('aside', true).toString();
-    this.asideLogo = this.getAsideLogo();    
+    this.asideLogo = this.getAsideLogo();
     setTimeout(() => {
       this.offcanvas = new KTOffcanvas(this.asideMenuOffcanvas.nativeElement, this.menuCanvasOptions);
     });
