@@ -1,5 +1,5 @@
 import { Component, OnInit, Inject } from '@angular/core';
-import { Sekolah } from 'src/app/core/_base/crud/models/school-organization';
+import { Sekolah } from 'src/app/core/_base/crud/models/school-models';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 
 @Component({

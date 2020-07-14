@@ -1,6 +1,6 @@
 import { HangtuahData, TotalType } from '../hangtuah-org-generator';
 import { KepalaInstansi, WakilKepalaInstansi, Instansi, Manager, Staff, Pengurus } from '../../_base/crud/models/hangtuah-organization';
-import { Sekolah, SchoolType } from '../../_base/crud/models/school-organization';
+import { Sekolah, SchoolType } from '../../_base/crud/models/school-models';
 import { SchoolData } from '../school-org-generator';
 
 export interface AddListener {

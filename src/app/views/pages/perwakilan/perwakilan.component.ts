@@ -3,7 +3,7 @@ import { DataInstansi } from 'src/app/core/generator/hangtuah/data-hangtuah';
 import { Perwakilan } from 'src/app/core/_base/crud/models/hangtuah-organization';
 import { DataPoolPerwakilan } from 'src/app/core/generator/data-pool/perwakilan-data-pool';
 import { TotalType } from 'src/app/core/generator/hangtuah-org-generator';
-import { SchoolType } from 'src/app/core/_base/crud/models/school-organization';
+import { SchoolType } from 'src/app/core/_base/crud/models/school-models';
 import { ColorUtil, SchoolTypeColor } from '../../../core/utils/color-helpers';
 
 @Component({

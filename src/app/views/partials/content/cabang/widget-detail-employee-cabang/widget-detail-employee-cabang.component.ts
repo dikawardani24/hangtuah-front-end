@@ -2,7 +2,7 @@ import { Component, OnInit, Inject } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { Pengurus } from 'src/app/core/_base/crud/models/hangtuah-organization';
 import { Location } from 'src/app/core/_base/crud/models/location';
-import { Karyawan } from 'src/app/core/_base/crud/models/school-organization';
+import { Karyawan } from 'src/app/core/_base/crud/models/school-models';
 
 export interface Employee {
   nik: string

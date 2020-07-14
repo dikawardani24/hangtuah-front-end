@@ -3,7 +3,7 @@ import { DataInstansi } from 'src/app/core/generator/hangtuah/data-hangtuah';
 import { DataPoolPusat } from 'src/app/core/generator/data-pool/pusat-data-pool';
 import { Pusat } from 'src/app/core/_base/crud/models/hangtuah-organization';
 import { TotalType } from 'src/app/core/generator/hangtuah-org-generator';
-import { SchoolType } from 'src/app/core/_base/crud/models/school-organization';
+import { SchoolType } from 'src/app/core/_base/crud/models/school-models';
 import { SchoolData } from 'src/app/core/generator/school-org-generator';
 
 @Component({

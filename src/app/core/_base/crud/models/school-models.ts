@@ -1,4 +1,5 @@
 import { Location } from './location';
+import { Instansi } from './hangtuah-organization';
 
 export enum SchoolType {
   PAUD = 'PAUD',

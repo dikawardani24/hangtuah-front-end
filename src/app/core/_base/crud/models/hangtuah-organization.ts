@@ -1,4 +1,4 @@
-import { Sekolah } from './school-organization'
+import { Sekolah } from './school-models'
 import { Location } from './location';
 
 export enum InstansiType {

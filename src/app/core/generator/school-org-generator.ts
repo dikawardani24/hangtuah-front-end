@@ -8,7 +8,7 @@ import {
   KepalaTataUsaha,
   StaffTataUsaha,
   Karyawan
-} from '../_base/crud/models/school-organization'
+} from '../_base/crud/models/school-models'
 import { PersonNode, Organization } from './generator'
 
 export interface SchoolData {

@@ -1,4 +1,4 @@
-import {SchoolType, JabatanSekolah} from '../_base/crud/models/school-organization';
+import {SchoolType, JabatanSekolah} from '../_base/crud/models/school-models';
 import { JabatanInstansi } from '../_base/crud/models/hangtuah-organization';
 
 export interface SchoolTypeColor {

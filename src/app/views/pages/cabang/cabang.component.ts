@@ -5,7 +5,7 @@ import { DataInstansi } from 'src/app/core/generator/hangtuah/data-hangtuah';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { WidgetDetailCabangComponent } from '../../partials/content/cabang/widget-detail-cabang/widget-detail-cabang.component';
 import { TotalType } from 'src/app/core/generator/hangtuah-org-generator';
-import { SchoolType } from 'src/app/core/_base/crud/models/school-organization';
+import { SchoolType } from 'src/app/core/_base/crud/models/school-models';
 
 @Component({
   selector: 'kt-cabang',

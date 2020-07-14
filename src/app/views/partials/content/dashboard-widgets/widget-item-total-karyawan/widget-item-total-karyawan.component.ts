@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { SchoolType, JabatanSekolah } from 'src/app/core/_base/crud/models/school-organization';
+import { SchoolType, JabatanSekolah } from 'src/app/core/_base/crud/models/school-models';
 import { SchoolTypeColor, ColorUtil } from 'src/app/core/utils/color-helpers';
 import { TotalType } from 'src/app/core/generator/hangtuah-org-generator';
 

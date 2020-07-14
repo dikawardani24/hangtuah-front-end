@@ -11,7 +11,7 @@ import {
   Kelas,
   KepalaTataUsaha,
   StaffTataUsaha
-} from '../../../_base/crud/models/school-organization'
+} from '../../../_base/crud/models/school-models'
 import { DataTK } from './tk'
 
 

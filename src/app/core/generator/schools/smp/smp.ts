@@ -1,4 +1,4 @@
-import { Grade, MataPelajaran } from '../../../_base/crud/models/school-organization'
+import { Grade, MataPelajaran } from '../../../_base/crud/models/school-models'
 import { BaseSchoolData } from '../../school-org-generator'
 
 export class DataSMP extends BaseSchoolData {

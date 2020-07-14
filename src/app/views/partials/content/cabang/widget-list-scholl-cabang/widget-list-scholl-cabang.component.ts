@@ -2,7 +2,7 @@ import { Component, OnInit, Inject } from '@angular/core';
 import { Instansi } from '../../../../../core/_base/crud/models/hangtuah-organization';
 import { DataInstansi } from '../../../../../core/generator/hangtuah/data-hangtuah';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { SchoolType, Sekolah } from 'src/app/core/_base/crud/models/school-organization';
+import { SchoolType, Sekolah } from 'src/app/core/_base/crud/models/school-models';
 import { SchoolData } from 'src/app/core/generator/school-org-generator';
 
 export interface DataFilter {

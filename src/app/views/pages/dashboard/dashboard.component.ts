@@ -6,7 +6,7 @@ import { TotalType } from 'src/app/core/generator/hangtuah-org-generator';
 import { DataPoolCabang } from 'src/app/core/generator/data-pool/cabang-data-pool';
 import { DataPoolPerwakilan } from 'src/app/core/generator/data-pool/perwakilan-data-pool';
 import { DataPoolPusat } from 'src/app/core/generator/data-pool/pusat-data-pool';
-import { SchoolType } from 'src/app/core/_base/crud/models/school-organization';
+import { SchoolType } from 'src/app/core/_base/crud/models/school-models';
 
 export class Total {
   totalTk = 0

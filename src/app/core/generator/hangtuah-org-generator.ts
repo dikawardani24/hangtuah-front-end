@@ -1,6 +1,6 @@
 import { KepalaInstansi, WakilKepalaInstansi, Manager, Staff, Instansi, JabatanInstansi } from '../_base/crud/models/hangtuah-organization';
 import { Organization, PersonNode } from './generator';
-import { Sekolah, SchoolType, JabatanSekolah } from '../_base/crud/models/school-organization';
+import { Sekolah, SchoolType, JabatanSekolah } from '../_base/crud/models/school-models';
 import { SchoolData } from './school-org-generator';
 
 

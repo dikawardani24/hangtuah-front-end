@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { SchoolType } from '../../../../../core/_base/crud/models/school-organization';
+import { SchoolType } from '../../../../../core/_base/crud/models/school-models';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { WidgetListSchollCabangComponent, DataFilter } from '../widget-list-scholl-cabang/widget-list-scholl-cabang.component';
 import { DataInstansi } from 'src/app/core/generator/hangtuah/data-hangtuah';
